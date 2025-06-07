@@ -84,52 +84,71 @@ Then open `01_EDA_EduSpend.ipynb` and select the "EduSpend Project" kernel.
 - [x] Total Cost of Attendance (TCA) calculation
 - [x] Outlier detection
 
-### Phase 2: Model Development (In Progress)
-- [ ] Data preparation & feature engineering
-- [ ] Baseline regression model development
-- [ ] Model evaluation and refinement
-- [ ] Feature importance analysis
+### Phase 2: Model Development (Completed)
+
+- [x] Data preparation & feature engineering (including TCA calculation, handling categorical features, and scaling numerical features)
+- [x] Baseline regression model development (Random Forest Regressor)
+- [x] Model evaluation and refinement (achieved R² of ~0.82, MAE of ~$6,420)
+- [x] Cross-validation performed to ensure model robustness (average R² ~0.81)
+- [x] Feature importance analysis (identified `Rent_USD`, `Country_United States`, `Living_Cost_Index` as key predictors)
+- [x] Created a sample prediction function for practical application.
 
 ## Key Findings from EDA
 
 ### Dataset Overview
+
 - Total records: 907 education programs across multiple countries
 - Features include country, city, university, program, tuition fees, living costs, and more
 - No missing values identified in the dataset
 
 ### Cost Distribution Analysis
+
 - Tuition fees vary significantly across countries, with the US, UK, and Australia showing higher average costs
 - Higher degree levels (PhD, Masters) generally have higher tuition fees than Bachelors programs
 - Living cost indices correlate strongly with rent prices across different cities
 
 ### Correlation Highlights
+
 - Moderate positive correlation between tuition fees and living costs (r ≈ 0.45)
 - Strong correlation between rent costs and total living expenses (r ≈ 0.82)
 - Exchange rates show inverse relationship with some cost indicators
 
 ### Total Cost of Attendance (TCA)
+
 - Successfully engineered TCA metric combining tuition, rent, insurance and visa fees
 - Countries with highest TCA: USA, UK, Australia, Canada
 - Programs with highest TCA: Medical, Business, Engineering
 
 ### Outliers
+
 - Identified several high-cost outlier programs, primarily in medical and business fields
 - Approximately 8% of tuition fees and 6% of rent costs classified as outliers
 - Outliers were retained for modeling to maintain real-world cost variability
 
+## Key Findings from Model Development (Phase 2)
+
+- **Model Performance**: Developed a Random Forest Regressor capable of predicting Total Cost of Attendance (TCA) with an R² score of approximately 0.82 on the test set. The Mean Absolute Error (MAE) was around $6,420.
+- **Cross-Validation**: 5-fold cross-validation confirmed the model's stability, yielding an average R² of ~0.81, MAE of ~$6,550, and RMSE of ~$9,990.
+- **Key Predictors**: The most influential features in predicting TCA include `Rent_USD`, `Country_United States`, `Living_Cost_Index`, `Country_Australia`, `Country_United Kingdom`, and degree levels (e.g., `Level_PhD`, `Level_Masters`).
+- **Practical Application**: A function was developed to allow for sample TCA predictions based on user inputs, demonstrating the model's utility.
+- **Data Handling**: Successfully loaded and prepared data, including a strategy for handling the high-cardinality 'City' feature by simplifying it.
+
 ## Next Steps
-1. Create model development notebook (02_Model_Development.ipynb)
-2. Develop regression model to predict Total Cost of Attendance (TCA)
-3. Evaluate model performance and analyze feature importance
-4. Refine model for improved predictions
+
+1. **Phase 3: Advanced Modeling & Deployment**
+   - Explore hyperparameter tuning for the Random Forest model.
+   - Experiment with other regression algorithms (e.g., Gradient Boosting, Neural Networks).
+   - Develop an interactive web application or dashboard for users to get personalized cost estimates.
+   - Consider incorporating more data sources or features to further enhance prediction accuracy.
 
 ## Notes
+
 - The notebook includes comprehensive error handling for missing data files
 - All visualizations are designed to work with the expected dataset structure
 - The TCA calculation adapts to available data columns
 
 ## Troubleshooting
-If you encounter issues:
+
 1. Ensure the virtual environment is activated
 2. Verify the dataset is placed in the correct location
 3. Check that all packages are installed: `pip list`
