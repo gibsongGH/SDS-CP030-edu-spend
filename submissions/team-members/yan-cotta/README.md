@@ -84,12 +84,11 @@ Then open `01_EDA_EduSpend.ipynb` and select the "EduSpend Project" kernel.
 - [x] Total Cost of Attendance (TCA) calculation
 - [x] Outlier detection
 
-### Phase 2: Model Development (Completed)
-- [x] Data preparation & feature engineering
-- [x] Baseline regression model development
-- [x] Model evaluation and refinement
-- [x] Feature importance analysis
-- [x] Cross-validation and model testing
+### Phase 2: Model Development (In Progress)
+- [ ] Data preparation & feature engineering
+- [ ] Baseline regression model development
+- [ ] Model evaluation and refinement
+- [ ] Feature importance analysis
 
 ## Key Findings from EDA
 
@@ -118,55 +117,19 @@ Then open `01_EDA_EduSpend.ipynb` and select the "EduSpend Project" kernel.
 - Approximately 8% of tuition fees and 6% of rent costs classified as outliers
 - Outliers were retained for modeling to maintain real-world cost variability
 
-## Key Findings from Model Development
-
-### Model Performance
-
-- **Exceptional Accuracy**: R² score of 0.963, indicating the model explains 96.3% of variance in Total Cost of Attendance
-- **Low Prediction Error**: Mean Absolute Error of $2,631.72 (8.89% of mean TCA)
-- **Strong RMSE**: Root Mean Squared Error of $4,029.74, showing good handling of outliers
-- **Robust Cross-Validation**: 5-fold cross-validation confirms consistent performance (R² = 0.963 ±0.0066)
-- **Well-Balanced Errors**: Error distribution is centered around zero with no systematic bias
-
-### Feature Importance
-
-- **Rent Dominance**: Monthly rent cost is the most influential feature by far (approximately 60% importance)
-- **Geographic Impact**: USA location significantly increases predicted costs (around 10% importance)
-- **Living Cost Index**: General living costs provide additional predictive power (about 6% importance)
-- **City Effects**: Simplified city grouping shows moderate importance in predictions
-- **Program Factors**: Degree level and program duration have smaller but notable effects
-
-### Model Visualization Insights
-
-- **Excellent Fit**: Actual vs. predicted values show strong linear relationship along the ideal prediction line
-- **Normal Error Distribution**: Prediction errors follow approximately normal distribution around zero
-- **Consistent Performance**: Cross-validation metrics show minimal variation across different data subsets
-- **Visual Feature Importance**: Clear visualization of the dominant effect of rent costs on TCA predictions
-
-### Prediction Capabilities
-
-- Successfully predicts TCA across different countries, cities, and program types
-- Ability to estimate costs for new education scenarios not in the original dataset
-- Works best for countries well-represented in the training data (some limitations with uncommon countries)
-- Demo predictions show practical application for education planning scenarios
-
 ## Next Steps
-
-1. Phase 3: Advanced Model Development & Interactive Tool
-2. Hyperparameter tuning and alternative algorithm testing
-3. Development of user-friendly cost prediction interface
-4. Expanded analysis with more detailed program-specific factors
+1. Create model development notebook (02_Model_Development.ipynb)
+2. Develop regression model to predict Total Cost of Attendance (TCA)
+3. Evaluate model performance and analyze feature importance
+4. Refine model for improved predictions
 
 ## Notes
-
 - The notebook includes comprehensive error handling for missing data files
 - All visualizations are designed to work with the expected dataset structure
 - The TCA calculation adapts to available data columns
 
 ## Troubleshooting
-
 If you encounter issues:
-
 1. Ensure the virtual environment is activated
 2. Verify the dataset is placed in the correct location
 3. Check that all packages are installed: `pip list`
