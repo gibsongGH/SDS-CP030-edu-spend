@@ -2,6 +2,9 @@
 .ipynb_checkpoints
 .DS_Store
 .env
+Fine-Grained-PAT.txt
+notes.txt
+/submissions/team-members/ben-wilkey/data
 
 # virtual environments
 venv/
