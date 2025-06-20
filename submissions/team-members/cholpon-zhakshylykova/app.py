@@ -14,7 +14,7 @@ st.set_page_config(page_title='International Education Budget Planner', layout='
 st.title("🎓 International Education Budget Planner")
 
 # --- Load Data ---
-data = pd.read_csv("data_full.csv")  # Ensure this CSV is in the same directory
+data = pd.read_csv("preprocessed.csv")  # Ensure this CSV is in the same directory
 
 # --- Load Pretrained Model Components ---
 @st.cache_resource
@@ -22,10 +22,16 @@ def load_model_components():
     components_path = os.path.join(os.path.dirname(__file__), 'model_components.pkl')
     return joblib.load(components_path)
 
-model_components = load_model_components()
-encoder = model_components['encoder']
-scaler = model_components['scaler']
-regressor = model_components['regressor']
+import mlflow.sklearn
+
+# --- Load Model from MLflow ---
+@st.cache_resource
+def load_mlflow_model():
+    logged_model_uri = "runs:/9ee73373d9464faa935a392752c5e63e/model"
+    model = mlflow.sklearn.load_model(logged_model_uri)
+    return model
+
+regressor = load_mlflow_model()
 
 # --- Sidebar Inputs ---
 st.sidebar.header("Input Parameters")
