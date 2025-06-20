@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config(page_title='International Education Budget Planner', layout='centered')
+
 import pandas as pd
 import numpy as np
 import os
@@ -7,9 +9,8 @@ import plotly.express as px
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-st.write("✅ App is running.")
+
 # --- Page Config ---
-st.set_page_config(page_title='International Education Budget Planner', layout='centered')
 st.title("🎓 International Education Budget Planner")
 
 # --- Load Data ---
@@ -34,7 +35,7 @@ scaler = components["scaler"]
 st.sidebar.header("Input Parameters")
 target_country = st.sidebar.selectbox("Select Country", sorted(data["Country"].unique()))
 level = st.sidebar.selectbox("Select Level", sorted(data["Level"].unique()))
-duration = st.sidebar.slider("Duration (Years)", min_value=1, max_value=6, value=4)
+#duration = st.sidebar.slider("Duration (Years)", min_value=1, max_value=6, value=4)
 
 # Placeholders based on target country
 filtered = data[data["Country"] == target_country]
@@ -44,7 +45,7 @@ most_common_program = data["Program"].mode()[0]
 
 # --- Define feature categories ---
 categorical_features = ["Country", "City", "University", "Program", "Level"]
-numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD", "Total_cost"]
+numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD"]
 
 # --- User Input ---
 user_input = pd.DataFrame({
@@ -53,13 +54,12 @@ user_input = pd.DataFrame({
     "University": [most_common_university],
     "Program": [most_common_program],
     "Level": [level],
-    "Duration_Years": [duration],
+    #"Duration_Years": [duration],
     "Tuition_USD": [0],
     "Living_Cost_Index": [0],
     "Rent_USD": [0],
     "Visa_Fee_USD": [0],
-    "Insurance_USD": [0],
-    "Total_cost": [0]
+    "Insurance_USD": [0]
 })
 
 # --- Encode & Scale ---

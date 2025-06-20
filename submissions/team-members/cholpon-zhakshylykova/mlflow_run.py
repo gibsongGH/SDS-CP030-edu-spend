@@ -33,7 +33,7 @@ data = pd.read_csv("data_full.csv")  # Change to your path
 
 # Preprocessing
 categorical_features = ["Country", "City", "University", "Program", "Level"]
-numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD", "Total_cost"]
+numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD"]
 
 encoder = OneHotEncoder(sparse_output=False, drop="first", handle_unknown="ignore")
 encoded_features = encoder.fit_transform(data[categorical_features])
