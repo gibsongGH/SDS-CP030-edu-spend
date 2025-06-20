@@ -1,0 +1,22 @@
+artifact_path: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/590610549487280682/models/m-9f0d3a2154c44a33af7e141996a715b0/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+mlflow_version: 3.1.0
+model_id: m-9f0d3a2154c44a33af7e141996a715b0
+model_size_bytes: 167783
+model_uuid: m-9f0d3a2154c44a33af7e141996a715b0
+prompts: null
+run_id: b79481cde244413690ca711ef79a232c
+utc_time_created: '2025-06-20 11:50:16.286375'

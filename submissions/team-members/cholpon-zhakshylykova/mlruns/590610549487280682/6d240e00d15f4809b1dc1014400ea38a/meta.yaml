@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/590610549487280682/6d240e00d15f4809b1dc1014400ea38a/artifacts
+end_time: 1750420394783
+entry_point_name: ''
+experiment_id: '590610549487280682'
+lifecycle_stage: active
+run_id: 6d240e00d15f4809b1dc1014400ea38a
+run_name: RandomForest_Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750420389649
+status: 3
+tags: []
+user_id: cholponzhakshylykova
