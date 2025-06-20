@@ -1,3 +1,6 @@
+# Full MLflow script with plot logging and automatic UI launch
+
+
 import pandas as pd
 import numpy as np
 import mlflow
@@ -9,7 +12,6 @@ import webbrowser
 import sys
 import sklearn
 import xgboost
-import joblib
 
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import (
@@ -29,10 +31,13 @@ X = data.drop(columns=["Total_cost", "Affordability_Tier"])
 y_reg = data["Total_cost"]
 y_cls = data["Affordability_Tier"]
 
+# Encode class labels
+le = LabelEncoder()
+y_cls_encoded = le.fit_transform(y_cls)
 
 # Split data
 X_train, X_test, y_train_reg, y_test_reg = train_test_split(X, y_reg, test_size=0.2, random_state=42)
-_, _, y_train_cls, y_test_cls = train_test_split(X, y_cls, test_size=0.2, random_state=42)
+_, _, y_train_cls, y_test_cls = train_test_split(X, y_cls_encoded, test_size=0.2, random_state=42)
 
 # Set MLflow experiment
 mlflow.set_tracking_uri("file:./mlruns")
@@ -47,10 +52,6 @@ regressors = {
 
 # Store predicted costs
 predicted_costs = {}
-
-best_overall_model = None
-best_overall_r2 = -np.inf
-best_overall_name = ""
 
 for name, (model, params) in regressors.items():
     with mlflow.start_run(run_name=f"{name}_Regressor"):
@@ -85,11 +86,6 @@ for name, (model, params) in regressors.items():
         mlflow.log_metric("RMSE", rmse)
         mlflow.log_metric("R2", r2)
 
-        if r2 > best_overall_r2:
-            best_overall_r2 = r2
-            best_overall_model = best_model
-            best_overall_name = name
-
         # Plot: Predicted vs Actual
         plt.figure(figsize=(6, 4))
         plt.scatter(y_test_reg, preds, alpha=0.6)
@@ -108,11 +104,6 @@ for name, (model, params) in regressors.items():
         mlflow.log_artifact("pred_vs_actual.png")
         plt.close()
 
-# Save the best model
-joblib.dump(best_overall_model, "regressor_only.pkl")
-print(f"📦 Saved best model ({best_overall_name}) with R² = {best_overall_r2:.3f} to regressor_only.pkl")
-
-
 # CLASSIFICATION PHASE
 for name, preds in predicted_costs.items():
     with mlflow.start_run(run_name=f"{name}_Classifier"):
@@ -121,9 +112,7 @@ for name, preds in predicted_costs.items():
         mlflow.log_param("sklearn_version", sklearn.__version__)
         mlflow.log_param("xgboost_version", xgboost.__version__)
         pred_tiers = pd.qcut(preds, q=3, labels=["Low", "Medium", "High"])
-        y_pred_cls = pred_tiers
-
-        
+        y_pred_cls = le.transform(pred_tiers)
 
         # Metrics
         acc = accuracy_score(y_test_cls, y_pred_cls)
@@ -152,3 +141,4 @@ for name, preds in predicted_costs.items():
         plt.savefig("conf_matrix.png")
         mlflow.log_artifact("conf_matrix.png")
         plt.close()
+
