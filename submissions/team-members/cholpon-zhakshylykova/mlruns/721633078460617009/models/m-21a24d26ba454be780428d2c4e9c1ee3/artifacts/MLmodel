@@ -1,0 +1,1199 @@
+artifact_path: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/721633078460617009/models/m-21a24d26ba454be780428d2c4e9c1ee3/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+is_signature_from_type_hint: false
+mlflow_version: 3.1.0
+model_id: m-21a24d26ba454be780428d2c4e9c1ee3
+model_size_bytes: 270391
+model_uuid: m-21a24d26ba454be780428d2c4e9c1ee3
+prompts: null
+run_id: 4c1592a3951d42ef91d5c378bd7e2a1a
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "Country_Argentina", "required": true}, {"type":
+    "double", "name": "Country_Australia", "required": true}, {"type": "double", "name":
+    "Country_Austria", "required": true}, {"type": "double", "name": "Country_Bahrain",
+    "required": true}, {"type": "double", "name": "Country_Bangladesh", "required":
+    true}, {"type": "double", "name": "Country_Belgium", "required": true}, {"type":
+    "double", "name": "Country_Brazil", "required": true}, {"type": "double", "name":
+    "Country_Bulgaria", "required": true}, {"type": "double", "name": "Country_Canada",
+    "required": true}, {"type": "double", "name": "Country_China", "required": true},
+    {"type": "double", "name": "Country_Colombia", "required": true}, {"type": "double",
+    "name": "Country_Croatia", "required": true}, {"type": "double", "name": "Country_Cyprus",
+    "required": true}, {"type": "double", "name": "Country_Czech Republic", "required":
+    true}, {"type": "double", "name": "Country_Denmark", "required": true}, {"type":
+    "double", "name": "Country_Dominican Republic", "required": true}, {"type": "double",
+    "name": "Country_Ecuador", "required": true}, {"type": "double", "name": "Country_Egypt",
+    "required": true}, {"type": "double", "name": "Country_El Salvador", "required":
+    true}, {"type": "double", "name": "Country_Finland", "required": true}, {"type":
+    "double", "name": "Country_France", "required": true}, {"type": "double", "name":
+    "Country_Germany", "required": true}, {"type": "double", "name": "Country_Ghana",
+    "required": true}, {"type": "double", "name": "Country_Greece", "required": true},
+    {"type": "double", "name": "Country_Hong Kong", "required": true}, {"type": "double",
+    "name": "Country_Hungary", "required": true}, {"type": "double", "name": "Country_Iceland",
+    "required": true}, {"type": "double", "name": "Country_India", "required": true},
+    {"type": "double", "name": "Country_Indonesia", "required": true}, {"type": "double",
+    "name": "Country_Iran", "required": true}, {"type": "double", "name": "Country_Ireland",
+    "required": true}, {"type": "double", "name": "Country_Israel", "required": true},
+    {"type": "double", "name": "Country_Italy", "required": true}, {"type": "double",
+    "name": "Country_Japan", "required": true}, {"type": "double", "name": "Country_Kuwait",
+    "required": true}, {"type": "double", "name": "Country_Lebanon", "required": true},
+    {"type": "double", "name": "Country_Luxembourg", "required": true}, {"type": "double",
+    "name": "Country_Malaysia", "required": true}, {"type": "double", "name": "Country_Mexico",
+    "required": true}, {"type": "double", "name": "Country_Morocco", "required": true},
+    {"type": "double", "name": "Country_Netherlands", "required": true}, {"type":
+    "double", "name": "Country_New Zealand", "required": true}, {"type": "double",
+    "name": "Country_Nigeria", "required": true}, {"type": "double", "name": "Country_Norway",
+    "required": true}, {"type": "double", "name": "Country_Panama", "required": true},
+    {"type": "double", "name": "Country_Peru", "required": true}, {"type": "double",
+    "name": "Country_Poland", "required": true}, {"type": "double", "name": "Country_Portugal",
+    "required": true}, {"type": "double", "name": "Country_Romania", "required": true},
+    {"type": "double", "name": "Country_Russia", "required": true}, {"type": "double",
+    "name": "Country_Saudi Arabia", "required": true}, {"type": "double", "name":
+    "Country_Serbia", "required": true}, {"type": "double", "name": "Country_Singapore",
+    "required": true}, {"type": "double", "name": "Country_Slovenia", "required":
+    true}, {"type": "double", "name": "Country_South Africa", "required": true}, {"type":
+    "double", "name": "Country_South Korea", "required": true}, {"type": "double",
+    "name": "Country_Spain", "required": true}, {"type": "double", "name": "Country_Sweden",
+    "required": true}, {"type": "double", "name": "Country_Switzerland", "required":
+    true}, {"type": "double", "name": "Country_Taiwan", "required": true}, {"type":
+    "double", "name": "Country_Thailand", "required": true}, {"type": "double", "name":
+    "Country_Tunisia", "required": true}, {"type": "double", "name": "Country_Turkey",
+    "required": true}, {"type": "double", "name": "Country_UAE", "required": true},
+    {"type": "double", "name": "Country_UK", "required": true}, {"type": "double",
+    "name": "Country_USA", "required": true}, {"type": "double", "name": "Country_Ukraine",
+    "required": true}, {"type": "double", "name": "Country_Uruguay", "required": true},
+    {"type": "double", "name": "Country_Uzbekistan", "required": true}, {"type": "double",
+    "name": "Country_Vietnam", "required": true}, {"type": "double", "name": "City_Aalborg",
+    "required": true}, {"type": "double", "name": "City_Aarhus", "required": true},
+    {"type": "double", "name": "City_Aberdeen", "required": true}, {"type": "double",
+    "name": "City_Abu Dhabi", "required": true}, {"type": "double", "name": "City_Accra",
+    "required": true}, {"type": "double", "name": "City_Adelaide", "required": true},
+    {"type": "double", "name": "City_Ajman", "required": true}, {"type": "double",
+    "name": "City_Akureyri", "required": true}, {"type": "double", "name": "City_Al
+    Ahmadi", "required": true}, {"type": "double", "name": "City_Al Ain", "required":
+    true}, {"type": "double", "name": "City_Al Jahra", "required": true}, {"type":
+    "double", "name": "City_Al-Ahsa", "required": true}, {"type": "double", "name":
+    "City_Alexandria", "required": true}, {"type": "double", "name": "City_Algiers",
+    "required": true}, {"type": "double", "name": "City_Ambato", "required": true},
+    {"type": "double", "name": "City_Amsterdam", "required": true}, {"type": "double",
+    "name": "City_Andijan", "required": true}, {"type": "double", "name": "City_Ankara",
+    "required": true}, {"type": "double", "name": "City_Ann Arbor", "required": true},
+    {"type": "double", "name": "City_Annaba", "required": true}, {"type": "double",
+    "name": "City_Antalya", "required": true}, {"type": "double", "name": "City_Antwerp",
+    "required": true}, {"type": "double", "name": "City_Arequipa", "required": true},
+    {"type": "double", "name": "City_Armidale", "required": true}, {"type": "double",
+    "name": "City_Aston", "required": true}, {"type": "double", "name": "City_Aswan",
+    "required": true}, {"type": "double", "name": "City_Athens", "required": true},
+    {"type": "double", "name": "City_Athlone", "required": true}, {"type": "double",
+    "name": "City_Atlanta", "required": true}, {"type": "double", "name": "City_Auckland",
+    "required": true}, {"type": "double", "name": "City_Austin", "required": true},
+    {"type": "double", "name": "City_Aveiro", "required": true}, {"type": "double",
+    "name": "City_Ballarat", "required": true}, {"type": "double", "name": "City_Baltimore",
+    "required": true}, {"type": "double", "name": "City_Bandung", "required": true},
+    {"type": "double", "name": "City_Bangalore", "required": true}, {"type": "double",
+    "name": "City_Bangi", "required": true}, {"type": "double", "name": "City_Bangkok",
+    "required": true}, {"type": "double", "name": "City_Barcelona", "required": true},
+    {"type": "double", "name": "City_Barranquilla", "required": true}, {"type": "double",
+    "name": "City_Basel", "required": true}, {"type": "double", "name": "City_Bath",
+    "required": true}, {"type": "double", "name": "City_Beijing", "required": true},
+    {"type": "double", "name": "City_Beirut", "required": true}, {"type": "double",
+    "name": "City_Belfast", "required": true}, {"type": "double", "name": "City_Belgrade",
+    "required": true}, {"type": "double", "name": "City_Belval", "required": true},
+    {"type": "double", "name": "City_Bergen", "required": true}, {"type": "double",
+    "name": "City_Berkeley", "required": true}, {"type": "double", "name": "City_Berlin",
+    "required": true}, {"type": "double", "name": "City_Bern", "required": true},
+    {"type": "double", "name": "City_Bertrange", "required": true}, {"type": "double",
+    "name": "City_Bilbao", "required": true}, {"type": "double", "name": "City_Birmingham",
+    "required": true}, {"type": "double", "name": "City_Bizerte", "required": true},
+    {"type": "double", "name": "City_Bod\u00f8", "required": true}, {"type": "double",
+    "name": "City_Bogota", "required": true}, {"type": "double", "name": "City_Bologna",
+    "required": true}, {"type": "double", "name": "City_Bonn", "required": true},
+    {"type": "double", "name": "City_Bordeaux", "required": true}, {"type": "double",
+    "name": "City_Borgarnes", "required": true}, {"type": "double", "name": "City_Boston",
+    "required": true}, {"type": "double", "name": "City_Boulder", "required": true},
+    {"type": "double", "name": "City_Braga", "required": true}, {"type": "double",
+    "name": "City_Brasov", "required": true}, {"type": "double", "name": "City_Braunschweig",
+    "required": true}, {"type": "double", "name": "City_Bremen", "required": true},
+    {"type": "double", "name": "City_Brisbane", "required": true}, {"type": "double",
+    "name": "City_Bristol", "required": true}, {"type": "double", "name": "City_Brunel",
+    "required": true}, {"type": "double", "name": "City_Brussels", "required": true},
+    {"type": "double", "name": "City_Bucaramanga", "required": true}, {"type": "double",
+    "name": "City_Bucharest", "required": true}, {"type": "double", "name": "City_Budapest",
+    "required": true}, {"type": "double", "name": "City_Buenos Aires", "required":
+    true}, {"type": "double", "name": "City_Bukhara", "required": true}, {"type":
+    "double", "name": "City_Burgas", "required": true}, {"type": "double", "name":
+    "City_Bursa", "required": true}, {"type": "double", "name": "City_Busan", "required":
+    true}, {"type": "double", "name": "City_Byblos", "required": true}, {"type": "double",
+    "name": "City_Cairo", "required": true}, {"type": "double", "name": "City_Calgary",
+    "required": true}, {"type": "double", "name": "City_Cali", "required": true},
+    {"type": "double", "name": "City_Cambridge", "required": true}, {"type": "double",
+    "name": "City_Campinas", "required": true}, {"type": "double", "name": "City_Canberra",
+    "required": true}, {"type": "double", "name": "City_Cape Coast", "required": true},
+    {"type": "double", "name": "City_Cape Town", "required": true}, {"type": "double",
+    "name": "City_Cardiff", "required": true}, {"type": "double", "name": "City_Cartagena",
+    "required": true}, {"type": "double", "name": "City_Casablanca", "required": true},
+    {"type": "double", "name": "City_Celje", "required": true}, {"type": "double",
+    "name": "City_Chania", "required": true}, {"type": "double", "name": "City_Chengdu",
+    "required": true}, {"type": "double", "name": "City_Chennai", "required": true},
+    {"type": "double", "name": "City_Cheongju", "required": true}, {"type": "double",
+    "name": "City_Chiang Mai", "required": true}, {"type": "double", "name": "City_Chicago",
+    "required": true}, {"type": "double", "name": "City_Chiclayo", "required": true},
+    {"type": "double", "name": "City_Chios", "required": true}, {"type": "double",
+    "name": "City_Chitr\u00e9", "required": true}, {"type": "double", "name": "City_Chittagong",
+    "required": true}, {"type": "double", "name": "City_Christchurch", "required":
+    true}, {"type": "double", "name": "City_Cluj-Napoca", "required": true}, {"type":
+    "double", "name": "City_Coimbra", "required": true}, {"type": "double", "name":
+    "City_College Station", "required": true}, {"type": "double", "name": "City_Cologne",
+    "required": true}, {"type": "double", "name": "City_Columbus", "required": true},
+    {"type": "double", "name": "City_Constanta", "required": true}, {"type": "double",
+    "name": "City_Constantine", "required": true}, {"type": "double", "name": "City_Copenhagen",
+    "required": true}, {"type": "double", "name": "City_Cordoba", "required": true},
+    {"type": "double", "name": "City_Cork", "required": true}, {"type": "double",
+    "name": "City_Corvallis", "required": true}, {"type": "double", "name": "City_Coventry",
+    "required": true}, {"type": "double", "name": "City_Craiova", "required": true},
+    {"type": "double", "name": "City_Cuenca", "required": true}, {"type": "double",
+    "name": "City_Cusco", "required": true}, {"type": "double", "name": "City_Cyberjaya",
+    "required": true}, {"type": "double", "name": "City_Daegu", "required": true},
+    {"type": "double", "name": "City_Daejeon", "required": true}, {"type": "double",
+    "name": "City_Dammam", "required": true}, {"type": "double", "name": "City_Darmstadt",
+    "required": true}, {"type": "double", "name": "City_Darwin", "required": true},
+    {"type": "double", "name": "City_David", "required": true}, {"type": "double",
+    "name": "City_Davis", "required": true}, {"type": "double", "name": "City_De Montfort",
+    "required": true}, {"type": "double", "name": "City_Debrecen", "required": true},
+    {"type": "double", "name": "City_Delft", "required": true}, {"type": "double",
+    "name": "City_Delhi", "required": true}, {"type": "double", "name": "City_Denpasar",
+    "required": true}, {"type": "double", "name": "City_Denver", "required": true},
+    {"type": "double", "name": "City_Dhahran", "required": true}, {"type": "double",
+    "name": "City_Dhaka", "required": true}, {"type": "double", "name": "City_Differdange",
+    "required": true}, {"type": "double", "name": "City_Dnipro", "required": true},
+    {"type": "double", "name": "City_Dornbirn", "required": true}, {"type": "double",
+    "name": "City_Dresden", "required": true}, {"type": "double", "name": "City_Dubai",
+    "required": true}, {"type": "double", "name": "City_Dublin", "required": true},
+    {"type": "double", "name": "City_Dubrovnik", "required": true}, {"type": "double",
+    "name": "City_Dundee", "required": true}, {"type": "double", "name": "City_Dunedin",
+    "required": true}, {"type": "double", "name": "City_Durham", "required": true},
+    {"type": "double", "name": "City_Edinburgh", "required": true}, {"type": "double",
+    "name": "City_Edmonton", "required": true}, {"type": "double", "name": "City_Eindhoven",
+    "required": true}, {"type": "double", "name": "City_Enschede", "required": true},
+    {"type": "double", "name": "City_Esbjerg", "required": true}, {"type": "double",
+    "name": "City_Esch-sur-Alzette", "required": true}, {"type": "double", "name":
+    "City_Eskisehir", "required": true}, {"type": "double", "name": "City_Espoo",
+    "required": true}, {"type": "double", "name": "City_Essex", "required": true},
+    {"type": "double", "name": "City_Exeter", "required": true}, {"type": "double",
+    "name": "City_Famagusta", "required": true}, {"type": "double", "name": "City_Faro",
+    "required": true}, {"type": "double", "name": "City_Fez", "required": true}, {"type":
+    "double", "name": "City_Florence", "required": true}, {"type": "double", "name":
+    "City_Florianopolis", "required": true}, {"type": "double", "name": "City_Frankfurt",
+    "required": true}, {"type": "double", "name": "City_Freiburg", "required": true},
+    {"type": "double", "name": "City_Fribourg", "required": true}, {"type": "double",
+    "name": "City_Fujairah", "required": true}, {"type": "double", "name": "City_Fukuoka",
+    "required": true}, {"type": "double", "name": "City_Funchal", "required": true},
+    {"type": "double", "name": "City_Gabes", "required": true}, {"type": "double",
+    "name": "City_Gainesville", "required": true}, {"type": "double", "name": "City_Galway",
+    "required": true}, {"type": "double", "name": "City_Gdansk", "required": true},
+    {"type": "double", "name": "City_Geneva", "required": true}, {"type": "double",
+    "name": "City_Ghent", "required": true}, {"type": "double", "name": "City_Girne",
+    "required": true}, {"type": "double", "name": "City_Giza", "required": true},
+    {"type": "double", "name": "City_Gj\u00f8vik", "required": true}, {"type": "double",
+    "name": "City_Glasgow", "required": true}, {"type": "double", "name": "City_Gold
+    Coast", "required": true}, {"type": "double", "name": "City_Gothenburg", "required":
+    true}, {"type": "double", "name": "City_Granada", "required": true}, {"type":
+    "double", "name": "City_Graz", "required": true}, {"type": "double", "name": "City_Greenwich",
+    "required": true}, {"type": "double", "name": "City_Grenoble", "required": true},
+    {"type": "double", "name": "City_Groningen", "required": true}, {"type": "double",
+    "name": "City_Guadalajara", "required": true}, {"type": "double", "name": "City_Guangzhou",
+    "required": true}, {"type": "double", "name": "City_Guayaquil", "required": true},
+    {"type": "double", "name": "City_Gwangju", "required": true}, {"type": "double",
+    "name": "City_Gyor", "required": true}, {"type": "double", "name": "City_Hafnarfjordur",
+    "required": true}, {"type": "double", "name": "City_Halifax", "required": true},
+    {"type": "double", "name": "City_Hamburg", "required": true}, {"type": "double",
+    "name": "City_Hamilton", "required": true}, {"type": "double", "name": "City_Hangzhou",
+    "required": true}, {"type": "double", "name": "City_Hannover", "required": true},
+    {"type": "double", "name": "City_Hasselt", "required": true}, {"type": "double",
+    "name": "City_Hat Yai", "required": true}, {"type": "double", "name": "City_Hawalli",
+    "required": true}, {"type": "double", "name": "City_Heidelberg", "required": true},
+    {"type": "double", "name": "City_Helsinki", "required": true}, {"type": "double",
+    "name": "City_Heraklion", "required": true}, {"type": "double", "name": "City_Heriot-Watt",
+    "required": true}, {"type": "double", "name": "City_Herning", "required": true},
+    {"type": "double", "name": "City_Hiroshima", "required": true}, {"type": "double",
+    "name": "City_Ho", "required": true}, {"type": "double", "name": "City_Ho Chi
+    Minh City", "required": true}, {"type": "double", "name": "City_Hobart", "required":
+    true}, {"type": "double", "name": "City_Hong Kong", "required": true}, {"type":
+    "double", "name": "City_Horten", "required": true}, {"type": "double", "name":
+    "City_Hull", "required": true}, {"type": "double", "name": "City_Hyderabad", "required":
+    true}, {"type": "double", "name": "City_Iasi", "required": true}, {"type": "double",
+    "name": "City_Incheon", "required": true}, {"type": "double", "name": "City_Innsbruck",
+    "required": true}, {"type": "double", "name": "City_Ioannina", "required": true},
+    {"type": "double", "name": "City_Isa Town", "required": true}, {"type": "double",
+    "name": "City_Isfahan", "required": true}, {"type": "double", "name": "City_Istanbul",
+    "required": true}, {"type": "double", "name": "City_Ithaca", "required": true},
+    {"type": "double", "name": "City_Izmir", "required": true}, {"type": "double",
+    "name": "City_Jakarta", "required": true}, {"type": "double", "name": "City_Jeddah",
+    "required": true}, {"type": "double", "name": "City_Jena", "required": true},
+    {"type": "double", "name": "City_Joensuu", "required": true}, {"type": "double",
+    "name": "City_Johor Bahru", "required": true}, {"type": "double", "name": "City_Jounieh",
+    "required": true}, {"type": "double", "name": "City_Jyv\u00e4skyl\u00e4", "required":
+    true}, {"type": "double", "name": "City_Kanazawa", "required": true}, {"type":
+    "double", "name": "City_Kanpur", "required": true}, {"type": "double", "name":
+    "City_Karlsruhe", "required": true}, {"type": "double", "name": "City_Karlstad",
+    "required": true}, {"type": "double", "name": "City_Katowice", "required": true},
+    {"type": "double", "name": "City_Kayseri", "required": true}, {"type": "double",
+    "name": "City_Kazan", "required": true}, {"type": "double", "name": "City_Kecskemet",
+    "required": true}, {"type": "double", "name": "City_Keele", "required": true},
+    {"type": "double", "name": "City_Kent", "required": true}, {"type": "double",
+    "name": "City_Kharkiv", "required": true}, {"type": "double", "name": "City_Khon
+    Kaen", "required": true}, {"type": "double", "name": "City_Khulna", "required":
+    true}, {"type": "double", "name": "City_Kingston", "required": true}, {"type":
+    "double", "name": "City_Kirchberg", "required": true}, {"type": "double", "name":
+    "City_Klagenfurt", "required": true}, {"type": "double", "name": "City_Kobe",
+    "required": true}, {"type": "double", "name": "City_Kolding", "required": true},
+    {"type": "double", "name": "City_Konya", "required": true}, {"type": "double",
+    "name": "City_Kopavogur", "required": true}, {"type": "double", "name": "City_Koper",
+    "required": true}, {"type": "double", "name": "City_Kragujevac", "required": true},
+    {"type": "double", "name": "City_Krakow", "required": true}, {"type": "double",
+    "name": "City_Kristiansand", "required": true}, {"type": "double", "name": "City_Kuala
+    Lumpur", "required": true}, {"type": "double", "name": "City_Kuching", "required":
+    true}, {"type": "double", "name": "City_Kumasi", "required": true}, {"type": "double",
+    "name": "City_Kuopio", "required": true}, {"type": "double", "name": "City_Kuwait
+    City", "required": true}, {"type": "double", "name": "City_Kyiv", "required":
+    true}, {"type": "double", "name": "City_Kyoto", "required": true}, {"type": "double",
+    "name": "City_La Chorrera", "required": true}, {"type": "double", "name": "City_La
+    Plata", "required": true}, {"type": "double", "name": "City_La Romana", "required":
+    true}, {"type": "double", "name": "City_Lagos", "required": true}, {"type": "double",
+    "name": "City_Lancaster", "required": true}, {"type": "double", "name": "City_Lappeenranta",
+    "required": true}, {"type": "double", "name": "City_Larnaca", "required": true},
+    {"type": "double", "name": "City_Lausanne", "required": true}, {"type": "double",
+    "name": "City_Leeds", "required": true}, {"type": "double", "name": "City_Leicester",
+    "required": true}, {"type": "double", "name": "City_Leiden", "required": true},
+    {"type": "double", "name": "City_Leoben", "required": true}, {"type": "double",
+    "name": "City_Leuven", "required": true}, {"type": "double", "name": "City_Liege",
+    "required": true}, {"type": "double", "name": "City_Lille", "required": true},
+    {"type": "double", "name": "City_Lima", "required": true}, {"type": "double",
+    "name": "City_Limassol", "required": true}, {"type": "double", "name": "City_Limerick",
+    "required": true}, {"type": "double", "name": "City_Link\u00f6ping", "required":
+    true}, {"type": "double", "name": "City_Linz", "required": true}, {"type": "double",
+    "name": "City_Lisbon", "required": true}, {"type": "double", "name": "City_Lismore",
+    "required": true}, {"type": "double", "name": "City_Liverpool", "required": true},
+    {"type": "double", "name": "City_Ljubljana", "required": true}, {"type": "double",
+    "name": "City_Lodz", "required": true}, {"type": "double", "name": "City_Loja",
+    "required": true}, {"type": "double", "name": "City_London", "required": true},
+    {"type": "double", "name": "City_London ON", "required": true}, {"type": "double",
+    "name": "City_Los Angeles", "required": true}, {"type": "double", "name": "City_Loughborough",
+    "required": true}, {"type": "double", "name": "City_Louvain", "required": true},
+    {"type": "double", "name": "City_Lucerne", "required": true}, {"type": "double",
+    "name": "City_Lugano", "required": true}, {"type": "double", "name": "City_Lund",
+    "required": true}, {"type": "double", "name": "City_Luxembourg City", "required":
+    true}, {"type": "double", "name": "City_Lviv", "required": true}, {"type": "double",
+    "name": "City_Lyngby", "required": true}, {"type": "double", "name": "City_Lyon",
+    "required": true}, {"type": "double", "name": "City_Maastricht", "required": true},
+    {"type": "double", "name": "City_Madison", "required": true}, {"type": "double",
+    "name": "City_Madrid", "required": true}, {"type": "double", "name": "City_Makkah",
+    "required": true}, {"type": "double", "name": "City_Malang", "required": true},
+    {"type": "double", "name": "City_Maldonado", "required": true}, {"type": "double",
+    "name": "City_Manama", "required": true}, {"type": "double", "name": "City_Manchester",
+    "required": true}, {"type": "double", "name": "City_Mansoura", "required": true},
+    {"type": "double", "name": "City_Maribor", "required": true}, {"type": "double",
+    "name": "City_Marrakech", "required": true}, {"type": "double", "name": "City_Marseille",
+    "required": true}, {"type": "double", "name": "City_Mashhad", "required": true},
+    {"type": "double", "name": "City_Massachusetts", "required": true}, {"type": "double",
+    "name": "City_Maynooth", "required": true}, {"type": "double", "name": "City_Medellin",
+    "required": true}, {"type": "double", "name": "City_Medina", "required": true},
+    {"type": "double", "name": "City_Melaka", "required": true}, {"type": "double",
+    "name": "City_Melbourne", "required": true}, {"type": "double", "name": "City_Mendoza",
+    "required": true}, {"type": "double", "name": "City_Merida", "required": true},
+    {"type": "double", "name": "City_Mexico City", "required": true}, {"type": "double",
+    "name": "City_Milan", "required": true}, {"type": "double", "name": "City_Minneapolis",
+    "required": true}, {"type": "double", "name": "City_Miskolc", "required": true},
+    {"type": "double", "name": "City_Monastir", "required": true}, {"type": "double",
+    "name": "City_Moncton", "required": true}, {"type": "double", "name": "City_Mons",
+    "required": true}, {"type": "double", "name": "City_Monterrey", "required": true},
+    {"type": "double", "name": "City_Montevideo", "required": true}, {"type": "double",
+    "name": "City_Montpellier", "required": true}, {"type": "double", "name": "City_Montreal",
+    "required": true}, {"type": "double", "name": "City_Moscow", "required": true},
+    {"type": "double", "name": "City_Muharraq", "required": true}, {"type": "double",
+    "name": "City_Mumbai", "required": true}, {"type": "double", "name": "City_Munich",
+    "required": true}, {"type": "double", "name": "City_Nagoya", "required": true},
+    {"type": "double", "name": "City_Nakhon Ratchasima", "required": true}, {"type":
+    "double", "name": "City_Namangan", "required": true}, {"type": "double", "name":
+    "City_Nanjing", "required": true}, {"type": "double", "name": "City_Naples", "required":
+    true}, {"type": "double", "name": "City_Nashville", "required": true}, {"type":
+    "double", "name": "City_Neuchatel", "required": true}, {"type": "double", "name":
+    "City_New Haven", "required": true}, {"type": "double", "name": "City_New York",
+    "required": true}, {"type": "double", "name": "City_Newcastle", "required": true},
+    {"type": "double", "name": "City_Nice", "required": true}, {"type": "double",
+    "name": "City_Nicosia", "required": true}, {"type": "double", "name": "City_Nijmegen",
+    "required": true}, {"type": "double", "name": "City_Nilai", "required": true},
+    {"type": "double", "name": "City_Nis", "required": true}, {"type": "double", "name":
+    "City_Northumbria", "required": true}, {"type": "double", "name": "City_Nottingham",
+    "required": true}, {"type": "double", "name": "City_Nova Gorica", "required":
+    true}, {"type": "double", "name": "City_Novi Sad", "required": true}, {"type":
+    "double", "name": "City_Novosibirsk", "required": true}, {"type": "double", "name":
+    "City_Odense", "required": true}, {"type": "double", "name": "City_Odesa", "required":
+    true}, {"type": "double", "name": "City_Oran", "required": true}, {"type": "double",
+    "name": "City_Osaka", "required": true}, {"type": "double", "name": "City_Osijek",
+    "required": true}, {"type": "double", "name": "City_Oslo", "required": true},
+    {"type": "double", "name": "City_Ottawa", "required": true}, {"type": "double",
+    "name": "City_Oujda", "required": true}, {"type": "double", "name": "City_Oulu",
+    "required": true}, {"type": "double", "name": "City_Oxford", "required": true},
+    {"type": "double", "name": "City_Oxford Brookes", "required": true}, {"type":
+    "double", "name": "City_Padua", "required": true}, {"type": "double", "name":
+    "City_Palmerston North", "required": true}, {"type": "double", "name": "City_Panama
+    City", "required": true}, {"type": "double", "name": "City_Paphos", "required":
+    true}, {"type": "double", "name": "City_Paris", "required": true}, {"type": "double",
+    "name": "City_Patras", "required": true}, {"type": "double", "name": "City_Paysandu",
+    "required": true}, {"type": "double", "name": "City_Pecs", "required": true},
+    {"type": "double", "name": "City_Penang", "required": true}, {"type": "double",
+    "name": "City_Perth", "required": true}, {"type": "double", "name": "City_Philadelphia",
+    "required": true}, {"type": "double", "name": "City_Phuket", "required": true},
+    {"type": "double", "name": "City_Piraeus", "required": true}, {"type": "double",
+    "name": "City_Pisa", "required": true}, {"type": "double", "name": "City_Pittsburgh",
+    "required": true}, {"type": "double", "name": "City_Piura", "required": true},
+    {"type": "double", "name": "City_Plovdiv", "required": true}, {"type": "double",
+    "name": "City_Plymouth", "required": true}, {"type": "double", "name": "City_Pohang",
+    "required": true}, {"type": "double", "name": "City_Port Said", "required": true},
+    {"type": "double", "name": "City_Portland", "required": true}, {"type": "double",
+    "name": "City_Porto", "required": true}, {"type": "double", "name": "City_Porto
+    Alegre", "required": true}, {"type": "double", "name": "City_Portsmouth", "required":
+    true}, {"type": "double", "name": "City_Poznan", "required": true}, {"type": "double",
+    "name": "City_Prague", "required": true}, {"type": "double", "name": "City_Prince
+    George", "required": true}, {"type": "double", "name": "City_Princeton", "required":
+    true}, {"type": "double", "name": "City_Puebla", "required": true}, {"type": "double",
+    "name": "City_Puerto Plata", "required": true}, {"type": "double", "name": "City_Pune",
+    "required": true}, {"type": "double", "name": "City_Quebec City", "required":
+    true}, {"type": "double", "name": "City_Queen Mary", "required": true}, {"type":
+    "double", "name": "City_Queretaro", "required": true}, {"type": "double", "name":
+    "City_Quito", "required": true}, {"type": "double", "name": "City_Rabat", "required":
+    true}, {"type": "double", "name": "City_Rajshahi", "required": true}, {"type":
+    "double", "name": "City_Raleigh", "required": true}, {"type": "double", "name":
+    "City_Ras Al Khaimah", "required": true}, {"type": "double", "name": "City_Reading",
+    "required": true}, {"type": "double", "name": "City_Recife", "required": true},
+    {"type": "double", "name": "City_Regina", "required": true}, {"type": "double",
+    "name": "City_Rennes", "required": true}, {"type": "double", "name": "City_Reykjavik",
+    "required": true}, {"type": "double", "name": "City_Rhodes", "required": true},
+    {"type": "double", "name": "City_Riffa", "required": true}, {"type": "double",
+    "name": "City_Rijeka", "required": true}, {"type": "double", "name": "City_Rio
+    de Janeiro", "required": true}, {"type": "double", "name": "City_Rivera", "required":
+    true}, {"type": "double", "name": "City_Riyadh", "required": true}, {"type": "double",
+    "name": "City_Rome", "required": true}, {"type": "double", "name": "City_Rosario",
+    "required": true}, {"type": "double", "name": "City_Roskilde", "required": true},
+    {"type": "double", "name": "City_Rostov-on-Don", "required": true}, {"type": "double",
+    "name": "City_Rotterdam", "required": true}, {"type": "double", "name": "City_Royal
+    Holloway", "required": true}, {"type": "double", "name": "City_Ruse", "required":
+    true}, {"type": "double", "name": "City_Saint Petersburg", "required": true},
+    {"type": "double", "name": "City_Sakhir", "required": true}, {"type": "double",
+    "name": "City_Salamanca", "required": true}, {"type": "double", "name": "City_Salmiya",
+    "required": true}, {"type": "double", "name": "City_Salto", "required": true},
+    {"type": "double", "name": "City_Salvador", "required": true}, {"type": "double",
+    "name": "City_Salzburg", "required": true}, {"type": "double", "name": "City_Samara",
+    "required": true}, {"type": "double", "name": "City_Samarkand", "required": true},
+    {"type": "double", "name": "City_San Diego", "required": true}, {"type": "double",
+    "name": "City_San Francisco", "required": true}, {"type": "double", "name": "City_San
+    Luis Potosi", "required": true}, {"type": "double", "name": "City_San Miguel",
+    "required": true}, {"type": "double", "name": "City_San Pedro", "required": true},
+    {"type": "double", "name": "City_San Salvador", "required": true}, {"type": "double",
+    "name": "City_Santa Ana", "required": true}, {"type": "double", "name": "City_Santa
+    Tecla", "required": true}, {"type": "double", "name": "City_Santiago", "required":
+    true}, {"type": "double", "name": "City_Santo Domingo", "required": true}, {"type":
+    "double", "name": "City_Sao Paulo", "required": true}, {"type": "double", "name":
+    "City_Sapporo", "required": true}, {"type": "double", "name": "City_Saskatoon",
+    "required": true}, {"type": "double", "name": "City_Seattle", "required": true},
+    {"type": "double", "name": "City_Semarang", "required": true}, {"type": "double",
+    "name": "City_Sendai", "required": true}, {"type": "double", "name": "City_Seoul",
+    "required": true}, {"type": "double", "name": "City_Seville", "required": true},
+    {"type": "double", "name": "City_Sfax", "required": true}, {"type": "double",
+    "name": "City_Shah Alam", "required": true}, {"type": "double", "name": "City_Shanghai",
+    "required": true}, {"type": "double", "name": "City_Sharjah", "required": true},
+    {"type": "double", "name": "City_Sheffield", "required": true}, {"type": "double",
+    "name": "City_Shenzhen", "required": true}, {"type": "double", "name": "City_Sherbrooke",
+    "required": true}, {"type": "double", "name": "City_Shiraz", "required": true},
+    {"type": "double", "name": "City_Sidon", "required": true}, {"type": "double",
+    "name": "City_Singapore", "required": true}, {"type": "double", "name": "City_Slagelse",
+    "required": true}, {"type": "double", "name": "City_Sligo", "required": true},
+    {"type": "double", "name": "City_Sofia", "required": true}, {"type": "double",
+    "name": "City_Songkhla", "required": true}, {"type": "double", "name": "City_Sonsonate",
+    "required": true}, {"type": "double", "name": "City_Sousse", "required": true},
+    {"type": "double", "name": "City_Southampton", "required": true}, {"type": "double",
+    "name": "City_Split", "required": true}, {"type": "double", "name": "City_St.
+    Gallen", "required": true}, {"type": "double", "name": "City_St. John''s", "required":
+    true}, {"type": "double", "name": "City_Stanford", "required": true}, {"type":
+    "double", "name": "City_Stavanger", "required": true}, {"type": "double", "name":
+    "City_Stockholm", "required": true}, {"type": "double", "name": "City_Strasbourg",
+    "required": true}, {"type": "double", "name": "City_Strathclyde", "required":
+    true}, {"type": "double", "name": "City_Stuttgart", "required": true}, {"type":
+    "double", "name": "City_Subotica", "required": true}, {"type": "double", "name":
+    "City_Sudbury", "required": true}, {"type": "double", "name": "City_Sunshine Coast",
+    "required": true}, {"type": "double", "name": "City_Surabaya", "required": true},
+    {"type": "double", "name": "City_Surrey", "required": true}, {"type": "double",
+    "name": "City_Sussex", "required": true}, {"type": "double", "name": "City_Suwon",
+    "required": true}, {"type": "double", "name": "City_Swansea", "required": true},
+    {"type": "double", "name": "City_Sydney", "required": true}, {"type": "double",
+    "name": "City_Sylhet", "required": true}, {"type": "double", "name": "City_Szeged",
+    "required": true}, {"type": "double", "name": "City_Tabriz", "required": true},
+    {"type": "double", "name": "City_Tabuk", "required": true}, {"type": "double",
+    "name": "City_Taif", "required": true}, {"type": "double", "name": "City_Taipei",
+    "required": true}, {"type": "double", "name": "City_Tamale", "required": true},
+    {"type": "double", "name": "City_Tampere", "required": true}, {"type": "double",
+    "name": "City_Tangier", "required": true}, {"type": "double", "name": "City_Tashkent",
+    "required": true}, {"type": "double", "name": "City_Tehran", "required": true},
+    {"type": "double", "name": "City_Tel Aviv", "required": true}, {"type": "double",
+    "name": "City_Tempe", "required": true}, {"type": "double", "name": "City_Thessaloniki",
+    "required": true}, {"type": "double", "name": "City_Thunder Bay", "required":
+    true}, {"type": "double", "name": "City_Tijuana", "required": true}, {"type":
+    "double", "name": "City_Tilburg", "required": true}, {"type": "double", "name":
+    "City_Timisoara", "required": true}, {"type": "double", "name": "City_Tlemcen",
+    "required": true}, {"type": "double", "name": "City_Tokyo", "required": true},
+    {"type": "double", "name": "City_Tomsk", "required": true}, {"type": "double",
+    "name": "City_Toowoomba", "required": true}, {"type": "double", "name": "City_Toronto",
+    "required": true}, {"type": "double", "name": "City_Toulouse", "required": true},
+    {"type": "double", "name": "City_Townsville", "required": true}, {"type": "double",
+    "name": "City_Tripoli", "required": true}, {"type": "double", "name": "City_Trois-Rivieres",
+    "required": true}, {"type": "double", "name": "City_Troms\u00f8", "required":
+    true}, {"type": "double", "name": "City_Trondheim", "required": true}, {"type":
+    "double", "name": "City_Trujillo", "required": true}, {"type": "double", "name":
+    "City_Tsukuba", "required": true}, {"type": "double", "name": "City_Tunis", "required":
+    true}, {"type": "double", "name": "City_Turin", "required": true}, {"type": "double",
+    "name": "City_Turku", "required": true}, {"type": "double", "name": "City_Ulsan",
+    "required": true}, {"type": "double", "name": "City_Ulster", "required": true},
+    {"type": "double", "name": "City_Ume\u00e5", "required": true}, {"type": "double",
+    "name": "City_Uppsala", "required": true}, {"type": "double", "name": "City_Urbana",
+    "required": true}, {"type": "double", "name": "City_Urbana-Champaign", "required":
+    true}, {"type": "double", "name": "City_Utrecht", "required": true}, {"type":
+    "double", "name": "City_Vaasa", "required": true}, {"type": "double", "name":
+    "City_Valencia", "required": true}, {"type": "double", "name": "City_Vancouver",
+    "required": true}, {"type": "double", "name": "City_Varna", "required": true},
+    {"type": "double", "name": "City_Veszprem", "required": true}, {"type": "double",
+    "name": "City_Victoria", "required": true}, {"type": "double", "name": "City_Vienna",
+    "required": true}, {"type": "double", "name": "City_Vila Real", "required": true},
+    {"type": "double", "name": "City_Volos", "required": true}, {"type": "double",
+    "name": "City_V\u00e4xj\u00f6", "required": true}, {"type": "double", "name":
+    "City_Wageningen", "required": true}, {"type": "double", "name": "City_Walferdange",
+    "required": true}, {"type": "double", "name": "City_Warsaw", "required": true},
+    {"type": "double", "name": "City_Warwick", "required": true}, {"type": "double",
+    "name": "City_Waterford", "required": true}, {"type": "double", "name": "City_Waterloo",
+    "required": true}, {"type": "double", "name": "City_Wellington", "required": true},
+    {"type": "double", "name": "City_West Lafayette", "required": true}, {"type":
+    "double", "name": "City_Westminster", "required": true}, {"type": "double", "name":
+    "City_Windsor", "required": true}, {"type": "double", "name": "City_Winnipeg",
+    "required": true}, {"type": "double", "name": "City_Winterthur", "required": true},
+    {"type": "double", "name": "City_Wollongong", "required": true}, {"type": "double",
+    "name": "City_Wroclaw", "required": true}, {"type": "double", "name": "City_Wuhan",
+    "required": true}, {"type": "double", "name": "City_Xanthi", "required": true},
+    {"type": "double", "name": "City_Xi''an", "required": true}, {"type": "double",
+    "name": "City_Yekaterinburg", "required": true}, {"type": "double", "name": "City_Yogyakarta",
+    "required": true}, {"type": "double", "name": "City_Zadar", "required": true},
+    {"type": "double", "name": "City_Zagreb", "required": true}, {"type": "double",
+    "name": "City_Zaragoza", "required": true}, {"type": "double", "name": "City_Zurich",
+    "required": true}, {"type": "double", "name": "City_\u00c5s", "required": true},
+    {"type": "double", "name": "University_AUT University", "required": true}, {"type":
+    "double", "name": "University_Aalborg University", "required": true}, {"type":
+    "double", "name": "University_Aalto University", "required": true}, {"type": "double",
+    "name": "University_Aarhus University", "required": true}, {"type": "double",
+    "name": "University_Abdelmalek Essaadi University", "required": true}, {"type":
+    "double", "name": "University_Adam Mickiewicz University", "required": true},
+    {"type": "double", "name": "University_Agricultural University", "required": true},
+    {"type": "double", "name": "University_Ain Shams University", "required": true},
+    {"type": "double", "name": "University_Aix-Marseille University", "required":
+    true}, {"type": "double", "name": "University_Ajman University", "required": true},
+    {"type": "double", "name": "University_Akdeniz University", "required": true},
+    {"type": "double", "name": "University_Alexandria University", "required": true},
+    {"type": "double", "name": "University_Alexandru Ioan Cuza University", "required":
+    true}, {"type": "double", "name": "University_American University Cyprus", "required":
+    true}, {"type": "double", "name": "University_American University Kuwait", "required":
+    true}, {"type": "double", "name": "University_American University in Cairo", "required":
+    true}, {"type": "double", "name": "University_American University in Dubai", "required":
+    true}, {"type": "double", "name": "University_American University of Beirut",
+    "required": true}, {"type": "double", "name": "University_American University
+    of Sharjah", "required": true}, {"type": "double", "name": "University_Anadolu
+    University", "required": true}, {"type": "double", "name": "University_Andijan
+    State University", "required": true}, {"type": "double", "name": "University_Anglia
+    Ruskin University", "required": true}, {"type": "double", "name": "University_Applied
+    Science University", "required": true}, {"type": "double", "name": "University_Arabian
+    Gulf University", "required": true}, {"type": "double", "name": "University_Aristotle
+    University", "required": true}, {"type": "double", "name": "University_Arizona
+    State University", "required": true}, {"type": "double", "name": "University_Aston
+    University", "required": true}, {"type": "double", "name": "University_Aswan University",
+    "required": true}, {"type": "double", "name": "University_Athens University of
+    Economics", "required": true}, {"type": "double", "name": "University_Athlone
+    IT", "required": true}, {"type": "double", "name": "University_Australian College
+    Kuwait", "required": true}, {"type": "double", "name": "University_Australian
+    National University", "required": true}, {"type": "double", "name": "University_Babes-Bolyai
+    University", "required": true}, {"type": "double", "name": "University_Badji Mokhtar
+    University", "required": true}, {"type": "double", "name": "University_Bahrain
+    Polytechnic", "required": true}, {"type": "double", "name": "University_Bangladesh
+    University of Engineering", "required": true}, {"type": "double", "name": "University_Bifrost
+    University", "required": true}, {"type": "double", "name": "University_Bogazici
+    University", "required": true}, {"type": "double", "name": "University_Brawijaya
+    University", "required": true}, {"type": "double", "name": "University_Brunel
+    University London", "required": true}, {"type": "double", "name": "University_Budapest
+    University of Technology", "required": true}, {"type": "double", "name": "University_Bukhara
+    State University", "required": true}, {"type": "double", "name": "University_Burgas
+    Free University", "required": true}, {"type": "double", "name": "University_CETYS
+    Universidad", "required": true}, {"type": "double", "name": "University_CUET",
+    "required": true}, {"type": "double", "name": "University_Cadi Ayyad University",
+    "required": true}, {"type": "double", "name": "University_Cairo University", "required":
+    true}, {"type": "double", "name": "University_Cardiff University", "required":
+    true}, {"type": "double", "name": "University_Carnegie Mellon", "required": true},
+    {"type": "double", "name": "University_Chalmers University", "required": true},
+    {"type": "double", "name": "University_Chamber of Commerce School", "required":
+    true}, {"type": "double", "name": "University_Charles Darwin University", "required":
+    true}, {"type": "double", "name": "University_Charles University", "required":
+    true}, {"type": "double", "name": "University_Chiang Mai University", "required":
+    true}, {"type": "double", "name": "University_Chonnam National University", "required":
+    true}, {"type": "double", "name": "University_Chosun University", "required":
+    true}, {"type": "double", "name": "University_Chulalongkorn University", "required":
+    true}, {"type": "double", "name": "University_Chungbuk National University", "required":
+    true}, {"type": "double", "name": "University_Chungnam National University", "required":
+    true}, {"type": "double", "name": "University_Columbia University", "required":
+    true}, {"type": "double", "name": "University_Cornell University", "required":
+    true}, {"type": "double", "name": "University_Coventry University", "required":
+    true}, {"type": "double", "name": "University_Cyprus University of Technology",
+    "required": true}, {"type": "double", "name": "University_Dalhousie University",
+    "required": true}, {"type": "double", "name": "University_De Montfort University",
+    "required": true}, {"type": "double", "name": "University_Democritus University",
+    "required": true}, {"type": "double", "name": "University_Diponegoro University",
+    "required": true}, {"type": "double", "name": "University_Dnipro Polytechnic",
+    "required": true}, {"type": "double", "name": "University_Dong-A University",
+    "required": true}, {"type": "double", "name": "University_Duke University", "required":
+    true}, {"type": "double", "name": "University_Durham University", "required":
+    true}, {"type": "double", "name": "University_EPFL", "required": true}, {"type":
+    "double", "name": "University_ESPOL", "required": true}, {"type": "double", "name":
+    "University_ETH Basel", "required": true}, {"type": "double", "name": "University_ETH
+    Zurich", "required": true}, {"type": "double", "name": "University_Eastern Mediterranean
+    University", "required": true}, {"type": "double", "name": "University_Ege University",
+    "required": true}, {"type": "double", "name": "University_Erasmus University",
+    "required": true}, {"type": "double", "name": "University_Erciyes University",
+    "required": true}, {"type": "double", "name": "University_European Business University",
+    "required": true}, {"type": "double", "name": "University_FH Vorarlberg", "required":
+    true}, {"type": "double", "name": "University_Faculty of Logistics", "required":
+    true}, {"type": "double", "name": "University_Federation University", "required":
+    true}, {"type": "double", "name": "University_Ferdowsi University", "required":
+    true}, {"type": "double", "name": "University_Free University of Berlin", "required":
+    true}, {"type": "double", "name": "University_Fudan University", "required": true},
+    {"type": "double", "name": "University_Fujairah University", "required": true},
+    {"type": "double", "name": "University_Gadjah Mada University", "required": true},
+    {"type": "double", "name": "University_Gdansk University of Technology", "required":
+    true}, {"type": "double", "name": "University_Georgia Tech", "required": true},
+    {"type": "double", "name": "University_Ghent University", "required": true}, {"type":
+    "double", "name": "University_Girne American University", "required": true}, {"type":
+    "double", "name": "University_Goethe University", "required": true}, {"type":
+    "double", "name": "University_Grenoble INP", "required": true}, {"type": "double",
+    "name": "University_Griffith University", "required": true}, {"type": "double",
+    "name": "University_Gulf University for Science", "required": true}, {"type":
+    "double", "name": "University_HCMUT", "required": true}, {"type": "double", "name":
+    "University_HKUST", "required": true}, {"type": "double", "name": "University_Hanbat
+    National University", "required": true}, {"type": "double", "name": "University_Hanyang
+    University", "required": true}, {"type": "double", "name": "University_Harvard
+    University", "required": true}, {"type": "double", "name": "University_Hassan
+    II University", "required": true}, {"type": "double", "name": "University_Hasselt
+    University", "required": true}, {"type": "double", "name": "University_Heidelberg
+    University", "required": true}, {"type": "double", "name": "University_Heriot-Watt
+    University", "required": true}, {"type": "double", "name": "University_Hiroshima
+    University", "required": true}, {"type": "double", "name": "University_Hokkaido
+    University", "required": true}, {"type": "double", "name": "University_Holy Spirit
+    University", "required": true}, {"type": "double", "name": "University_Humboldt
+    University", "required": true}, {"type": "double", "name": "University_IIT Bombay",
+    "required": true}, {"type": "double", "name": "University_IIT Delhi", "required":
+    true}, {"type": "double", "name": "University_IIT Hyderabad", "required": true},
+    {"type": "double", "name": "University_IIT Kanpur", "required": true}, {"type":
+    "double", "name": "University_IIT Madras", "required": true}, {"type": "double",
+    "name": "University_IIT Pune", "required": true}, {"type": "double", "name": "University_INHA
+    University Tashkent", "required": true}, {"type": "double", "name": "University_INSA
+    Rennes", "required": true}, {"type": "double", "name": "University_INSA Toulouse",
+    "required": true}, {"type": "double", "name": "University_INTEC", "required":
+    true}, {"type": "double", "name": "University_ISAE University", "required": true},
+    {"type": "double", "name": "University_IT Sligo", "required": true}, {"type":
+    "double", "name": "University_ITCA-FEPADE", "required": true}, {"type": "double",
+    "name": "University_ITMO University", "required": true}, {"type": "double", "name":
+    "University_Iceland University of Arts", "required": true}, {"type": "double",
+    "name": "University_Igor Sikorsky Kyiv Polytechnic", "required": true}, {"type":
+    "double", "name": "University_Imam Abdulrahman University", "required": true},
+    {"type": "double", "name": "University_Imperial College", "required": true}, {"type":
+    "double", "name": "University_Imperial College London", "required": true}, {"type":
+    "double", "name": "University_Incheon National University", "required": true},
+    {"type": "double", "name": "University_Indian Institute of Science", "required":
+    true}, {"type": "double", "name": "University_Institut Teknologi Bandung", "required":
+    true}, {"type": "double", "name": "University_Institut Teknologi Sepuluh", "required":
+    true}, {"type": "double", "name": "University_Isfahan University of Technology",
+    "required": true}, {"type": "double", "name": "University_Islamic University",
+    "required": true}, {"type": "double", "name": "University_Jagiellonian University",
+    "required": true}, {"type": "double", "name": "University_James Cook University",
+    "required": true}, {"type": "double", "name": "University_Johannes Kepler University",
+    "required": true}, {"type": "double", "name": "University_John von Neumann University",
+    "required": true}, {"type": "double", "name": "University_Johns Hopkins", "required":
+    true}, {"type": "double", "name": "University_KAIST", "required": true}, {"type":
+    "double", "name": "University_KFUPM", "required": true}, {"type": "double", "name":
+    "University_KIT", "required": true}, {"type": "double", "name": "University_KTH
+    Royal Institute", "required": true}, {"type": "double", "name": "University_KU
+    Leuven", "required": true}, {"type": "double", "name": "University_Kanazawa University",
+    "required": true}, {"type": "double", "name": "University_Karlstad University",
+    "required": true}, {"type": "double", "name": "University_Kazan Federal University",
+    "required": true}, {"type": "double", "name": "University_Keele University", "required":
+    true}, {"type": "double", "name": "University_Khalifa University", "required":
+    true}, {"type": "double", "name": "University_Kharkiv Polytechnic", "required":
+    true}, {"type": "double", "name": "University_Khon Kaen University", "required":
+    true}, {"type": "double", "name": "University_Khulna University", "required":
+    true}, {"type": "double", "name": "University_King Abdulaziz University", "required":
+    true}, {"type": "double", "name": "University_King Faisal University", "required":
+    true}, {"type": "double", "name": "University_King Saud University", "required":
+    true}, {"type": "double", "name": "University_King''s College London", "required":
+    true}, {"type": "double", "name": "University_Kingston University", "required":
+    true}, {"type": "double", "name": "University_Kobe University", "required": true},
+    {"type": "double", "name": "University_Korea University", "required": true}, {"type":
+    "double", "name": "University_Kuwait University", "required": true}, {"type":
+    "double", "name": "University_Kwame Nkrumah University", "required": true}, {"type":
+    "double", "name": "University_Kyoto University", "required": true}, {"type": "double",
+    "name": "University_Kyungpook National University", "required": true}, {"type":
+    "double", "name": "University_Kyushu University", "required": true}, {"type":
+    "double", "name": "University_LMU Munich", "required": true}, {"type": "double",
+    "name": "University_LUT University", "required": true}, {"type": "double", "name":
+    "University_Lakehead University", "required": true}, {"type": "double", "name":
+    "University_Lancaster University", "required": true}, {"type": "double", "name":
+    "University_Laurentian University", "required": true}, {"type": "double", "name":
+    "University_Laval University", "required": true}, {"type": "double", "name": "University_Lebanese
+    American University", "required": true}, {"type": "double", "name": "University_Lebanese
+    International", "required": true}, {"type": "double", "name": "University_Lebanese
+    University", "required": true}, {"type": "double", "name": "University_Leeds Beckett
+    University", "required": true}, {"type": "double", "name": "University_Leibniz
+    University", "required": true}, {"type": "double", "name": "University_Leiden
+    University", "required": true}, {"type": "double", "name": "University_Lincoln
+    University", "required": true}, {"type": "double", "name": "University_Link\u00f6ping
+    University", "required": true}, {"type": "double", "name": "University_Linnaeus
+    University", "required": true}, {"type": "double", "name": "University_Lodz University
+    of Technology", "required": true}, {"type": "double", "name": "University_Loughborough
+    University", "required": true}, {"type": "double", "name": "University_Lund University",
+    "required": true}, {"type": "double", "name": "University_Luxembourg Institute
+    of Science", "required": true}, {"type": "double", "name": "University_Luxembourg
+    School of Business", "required": true}, {"type": "double", "name": "University_Lviv
+    Polytechnic", "required": true}, {"type": "double", "name": "University_MIT",
+    "required": true}, {"type": "double", "name": "University_Maastricht University",
+    "required": true}, {"type": "double", "name": "University_Mansoura University",
+    "required": true}, {"type": "double", "name": "University_Massey University",
+    "required": true}, {"type": "double", "name": "University_Maynooth University",
+    "required": true}, {"type": "double", "name": "University_McGill University",
+    "required": true}, {"type": "double", "name": "University_McMaster University",
+    "required": true}, {"type": "double", "name": "University_Memorial University",
+    "required": true}, {"type": "double", "name": "University_Miami University Dolibois",
+    "required": true}, {"type": "double", "name": "University_Middle East Technical
+    University", "required": true}, {"type": "double", "name": "University_Mohammed
+    I University", "required": true}, {"type": "double", "name": "University_Mohammed
+    V University", "required": true}, {"type": "double", "name": "University_Monash
+    University", "required": true}, {"type": "double", "name": "University_Montanuniversit\u00e4t
+    Leoben", "required": true}, {"type": "double", "name": "University_Moscow State
+    University", "required": true}, {"type": "double", "name": "University_Multimedia
+    University", "required": true}, {"type": "double", "name": "University_NC State
+    University", "required": true}, {"type": "double", "name": "University_NTNU",
+    "required": true}, {"type": "double", "name": "University_NTNU Gj\u00f8vik", "required":
+    true}, {"type": "double", "name": "University_NTU", "required": true}, {"type":
+    "double", "name": "University_NTU Singapore", "required": true}, {"type": "double",
+    "name": "University_NUI Galway", "required": true}, {"type": "double", "name":
+    "University_NUS", "required": true}, {"type": "double", "name": "University_Nagoya
+    University", "required": true}, {"type": "double", "name": "University_Namangan
+    Institute", "required": true}, {"type": "double", "name": "University_Nanjing
+    University", "required": true}, {"type": "double", "name": "University_Nanyang
+    Technological University", "required": true}, {"type": "double", "name": "University_National
+    Taiwan University", "required": true}, {"type": "double", "name": "University_National
+    Technical University", "required": true}, {"type": "double", "name": "University_National
+    University of Cordoba", "required": true}, {"type": "double", "name": "University_National
+    University of Cuyo", "required": true}, {"type": "double", "name": "University_National
+    University of La Plata", "required": true}, {"type": "double", "name": "University_National
+    University of Rosario", "required": true}, {"type": "double", "name": "University_National
+    University of Singapore", "required": true}, {"type": "double", "name": "University_Neapolis
+    University", "required": true}, {"type": "double", "name": "University_Newcastle
+    University", "required": true}, {"type": "double", "name": "University_Nord University",
+    "required": true}, {"type": "double", "name": "University_Northeastern University",
+    "required": true}, {"type": "double", "name": "University_Northumbria University",
+    "required": true}, {"type": "double", "name": "University_Norwegian University
+    of Life Sciences", "required": true}, {"type": "double", "name": "University_Novosibirsk
+    State University", "required": true}, {"type": "double", "name": "University_Odesa
+    Polytechnic", "required": true}, {"type": "double", "name": "University_Ohio State
+    University", "required": true}, {"type": "double", "name": "University_Oregon
+    State University", "required": true}, {"type": "double", "name": "University_Osaka
+    University", "required": true}, {"type": "double", "name": "University_Ovidius
+    University", "required": true}, {"type": "double", "name": "University_Oxford
+    Brookes University", "required": true}, {"type": "double", "name": "University_POSTECH",
+    "required": true}, {"type": "double", "name": "University_PUC-Rio", "required":
+    true}, {"type": "double", "name": "University_PUCMM", "required": true}, {"type":
+    "double", "name": "University_PUCP", "required": true}, {"type": "double", "name":
+    "University_Peking University", "required": true}, {"type": "double", "name":
+    "University_Plovdiv University", "required": true}, {"type": "double", "name":
+    "University_Politecnico di Milano", "required": true}, {"type": "double", "name":
+    "University_Politecnico di Torino", "required": true}, {"type": "double", "name":
+    "University_Politehnica University", "required": true}, {"type": "double", "name":
+    "University_Port Said University", "required": true}, {"type": "double", "name":
+    "University_Portland State University", "required": true}, {"type": "double",
+    "name": "University_Prince of Songkla University", "required": true}, {"type":
+    "double", "name": "University_Princeton University", "required": true}, {"type":
+    "double", "name": "University_Purdue University", "required": true}, {"type":
+    "double", "name": "University_Pusan National University", "required": true}, {"type":
+    "double", "name": "University_Quality Leadership University", "required": true},
+    {"type": "double", "name": "University_Queen Mary University of London", "required":
+    true}, {"type": "double", "name": "University_Queen''s University", "required":
+    true}, {"type": "double", "name": "University_Queen''s University Belfast", "required":
+    true}, {"type": "double", "name": "University_Queensland University of Technology",
+    "required": true}, {"type": "double", "name": "University_RAK University", "required":
+    true}, {"type": "double", "name": "University_RMIT University", "required": true},
+    {"type": "double", "name": "University_RUET", "required": true}, {"type": "double",
+    "name": "University_RWTH Aachen", "required": true}, {"type": "double", "name":
+    "University_Radboud University", "required": true}, {"type": "double", "name":
+    "University_Reykjavik University", "required": true}, {"type": "double", "name":
+    "University_Roskilde University", "required": true}, {"type": "double", "name":
+    "University_Royal Holloway University", "required": true}, {"type": "double",
+    "name": "University_Royal University for Women", "required": true}, {"type": "double",
+    "name": "University_SIM Global Education", "required": true}, {"type": "double",
+    "name": "University_SIT", "required": true}, {"type": "double", "name": "University_SMU",
+    "required": true}, {"type": "double", "name": "University_SUST", "required": true},
+    {"type": "double", "name": "University_SUSTech", "required": true}, {"type": "double",
+    "name": "University_SUTD", "required": true}, {"type": "double", "name": "University_Sacred
+    Heart University", "required": true}, {"type": "double", "name": "University_Samara
+    State University", "required": true}, {"type": "double", "name": "University_Samarkand
+    State University", "required": true}, {"type": "double", "name": "University_Sapienza
+    University", "required": true}, {"type": "double", "name": "University_Selcuk
+    University", "required": true}, {"type": "double", "name": "University_Seoul National
+    University", "required": true}, {"type": "double", "name": "University_Shanghai
+    Jiao Tong University", "required": true}, {"type": "double", "name": "University_Sharif
+    University of Technology", "required": true}, {"type": "double", "name": "University_Shiraz
+    University", "required": true}, {"type": "double", "name": "University_Sichuan
+    University", "required": true}, {"type": "double", "name": "University_Singapore
+    Management University", "required": true}, {"type": "double", "name": "University_Singapore
+    University of Technology", "required": true}, {"type": "double", "name": "University_Sofia
+    University", "required": true}, {"type": "double", "name": "University_Sorbonne
+    University", "required": true}, {"type": "double", "name": "University_Southern
+    Cross University", "required": true}, {"type": "double", "name": "University_Southern
+    Federal University", "required": true}, {"type": "double", "name": "University_Stanford
+    University", "required": true}, {"type": "double", "name": "University_Sun Yat-sen
+    University", "required": true}, {"type": "double", "name": "University_Sungkyunkwan
+    University", "required": true}, {"type": "double", "name": "University_Sungkyunkwan
+    University (Suwon)", "required": true}, {"type": "double", "name": "University_Suranaree
+    University", "required": true}, {"type": "double", "name": "University_Swansea
+    University", "required": true}, {"type": "double", "name": "University_Szechenyi
+    Istvan University", "required": true}, {"type": "double", "name": "University_TU
+    Braunschweig", "required": true}, {"type": "double", "name": "University_TU Darmstadt",
+    "required": true}, {"type": "double", "name": "University_TU Delft", "required":
+    true}, {"type": "double", "name": "University_TU Dresden", "required": true},
+    {"type": "double", "name": "University_TU Eindhoven", "required": true}, {"type":
+    "double", "name": "University_TU Graz", "required": true}, {"type": "double",
+    "name": "University_TU Hamburg", "required": true}, {"type": "double", "name":
+    "University_TU Munich", "required": true}, {"type": "double", "name": "University_TU
+    Wien", "required": true}, {"type": "double", "name": "University_Taif University",
+    "required": true}, {"type": "double", "name": "University_Tampere University",
+    "required": true}, {"type": "double", "name": "University_Technical University
+    Berlin", "required": true}, {"type": "double", "name": "University_Technical University
+    Varna", "required": true}, {"type": "double", "name": "University_Technical University
+    of Crete", "required": true}, {"type": "double", "name": "University_Technical
+    University of Denmark", "required": true}, {"type": "double", "name": "University_Technical
+    University of Munich", "required": true}, {"type": "double", "name": "University_Tecnologico
+    de Monterrey", "required": true}, {"type": "double", "name": "University_Tecnol\u00f3gico
+    de Monterrey", "required": true}, {"type": "double", "name": "University_Tel Aviv
+    University", "required": true}, {"type": "double", "name": "University_Texas A&M
+    University", "required": true}, {"type": "double", "name": "University_Thaksin
+    University", "required": true}, {"type": "double", "name": "University_Tilburg
+    University", "required": true}, {"type": "double", "name": "University_Tohoku
+    University", "required": true}, {"type": "double", "name": "University_Tokyo Institute
+    of Technology", "required": true}, {"type": "double", "name": "University_Tomsk
+    State University", "required": true}, {"type": "double", "name": "University_Transilvania
+    University", "required": true}, {"type": "double", "name": "University_Trinity
+    College Dublin", "required": true}, {"type": "double", "name": "University_Tsinghua
+    University", "required": true}, {"type": "double", "name": "University_UAE University",
+    "required": true}, {"type": "double", "name": "University_UASLP", "required":
+    true}, {"type": "double", "name": "University_UC Berkeley", "required": true},
+    {"type": "double", "name": "University_UC Berkeley Extension", "required": true},
+    {"type": "double", "name": "University_UC Davis", "required": true}, {"type":
+    "double", "name": "University_UC San Diego", "required": true}, {"type": "double",
+    "name": "University_UCLA", "required": true}, {"type": "double", "name": "University_UCLouvain",
+    "required": true}, {"type": "double", "name": "University_UCNE", "required": true},
+    {"type": "double", "name": "University_UDLAP", "required": true}, {"type": "double",
+    "name": "University_UFBA", "required": true}, {"type": "double", "name": "University_UFPE",
+    "required": true}, {"type": "double", "name": "University_UFRGS", "required":
+    true}, {"type": "double", "name": "University_UFSC", "required": true}, {"type":
+    "double", "name": "University_UIS", "required": true}, {"type": "double", "name":
+    "University_UIUC", "required": true}, {"type": "double", "name": "University_UKM",
+    "required": true}, {"type": "double", "name": "University_UNAM", "required": true},
+    {"type": "double", "name": "University_UNBC", "required": true}, {"type": "double",
+    "name": "University_UNICAMP", "required": true}, {"type": "double", "name": "University_UNIMAS",
+    "required": true}, {"type": "double", "name": "University_UQTR", "required": true},
+    {"type": "double", "name": "University_USC", "required": true}, {"type": "double",
+    "name": "University_USI", "required": true}, {"type": "double", "name": "University_USI
+    Lugano", "required": true}, {"type": "double", "name": "University_USIM", "required":
+    true}, {"type": "double", "name": "University_USM", "required": true}, {"type":
+    "double", "name": "University_UT Austin", "required": true}, {"type": "double",
+    "name": "University_UTAD", "required": true}, {"type": "double", "name": "University_UTEC",
+    "required": true}, {"type": "double", "name": "University_UTESA", "required":
+    true}, {"type": "double", "name": "University_UTM", "required": true}, {"type":
+    "double", "name": "University_UTPL", "required": true}, {"type": "double", "name":
+    "University_UTeM", "required": true}, {"type": "double", "name": "University_UWE
+    Bristol", "required": true}, {"type": "double", "name": "University_Udayana University",
+    "required": true}, {"type": "double", "name": "University_UiT Arctic University",
+    "required": true}, {"type": "double", "name": "University_UiTM", "required": true},
+    {"type": "double", "name": "University_Ulsan National Institute of Science and
+    Technology", "required": true}, {"type": "double", "name": "University_Ulster
+    University", "required": true}, {"type": "double", "name": "University_Uludag
+    University", "required": true}, {"type": "double", "name": "University_Ume\u00e5
+    University", "required": true}, {"type": "double", "name": "University_Umm Al-Qura
+    University", "required": true}, {"type": "double", "name": "University_Universidad
+    Autonoma de Yucatan", "required": true}, {"type": "double", "name": "University_Universidad
+    Catolica", "required": true}, {"type": "double", "name": "University_Universidad
+    Central Este", "required": true}, {"type": "double", "name": "University_Universidad
+    Don Bosco", "required": true}, {"type": "double", "name": "University_Universidad
+    Latina", "required": true}, {"type": "double", "name": "University_Universidad
+    Metropolitana", "required": true}, {"type": "double", "name": "University_Universidad
+    Nacional", "required": true}, {"type": "double", "name": "University_Universidad
+    Nacional de Trujillo", "required": true}, {"type": "double", "name": "University_Universidad
+    ORT Uruguay", "required": true}, {"type": "double", "name": "University_Universidad
+    Politecnica", "required": true}, {"type": "double", "name": "University_Universidad
+    Polit\u00e9cnica de Madrid", "required": true}, {"type": "double", "name": "University_Universidad
+    San Agustin", "required": true}, {"type": "double", "name": "University_Universidad
+    San Antonio Abad", "required": true}, {"type": "double", "name": "University_Universidad
+    San Francisco", "required": true}, {"type": "double", "name": "University_Universidad
+    San Martin", "required": true}, {"type": "double", "name": "University_Universidad
+    Tecnica", "required": true}, {"type": "double", "name": "University_Universidad
+    Tecnologica", "required": true}, {"type": "double", "name": "University_Universidad
+    de Antioquia", "required": true}, {"type": "double", "name": "University_Universidad
+    de Cartagena", "required": true}, {"type": "double", "name": "University_Universidad
+    de Cuenca", "required": true}, {"type": "double", "name": "University_Universidad
+    de Granada", "required": true}, {"type": "double", "name": "University_Universidad
+    de Guadalajara", "required": true}, {"type": "double", "name": "University_Universidad
+    de Oriente", "required": true}, {"type": "double", "name": "University_Universidad
+    de Paysandu", "required": true}, {"type": "double", "name": "University_Universidad
+    de Piura", "required": true}, {"type": "double", "name": "University_Universidad
+    de Sevilla", "required": true}, {"type": "double", "name": "University_Universidad
+    de Sonsonate", "required": true}, {"type": "double", "name": "University_Universidad
+    de Valencia", "required": true}, {"type": "double", "name": "University_Universidad
+    de la Republica", "required": true}, {"type": "double", "name": "University_Universidad
+    del Norte", "required": true}, {"type": "double", "name": "University_Universidad
+    del Valle", "required": true}, {"type": "double", "name": "University_Universitat
+    Polit\u00e8cnica Catalunya", "required": true}, {"type": "double", "name": "University_Universitat
+    de Barcelona", "required": true}, {"type": "double", "name": "University_Universitat
+    de Val\u00e8ncia", "required": true}, {"type": "double", "name": "University_University
+    College Cork", "required": true}, {"type": "double", "name": "University_University
+    College London", "required": true}, {"type": "double", "name": "University_University
+    Politehnica", "required": true}, {"type": "double", "name": "University_University
+    for Development", "required": true}, {"type": "double", "name": "University_University
+    of Aberdeen", "required": true}, {"type": "double", "name": "University_University
+    of Adelaide", "required": true}, {"type": "double", "name": "University_University
+    of Agder", "required": true}, {"type": "double", "name": "University_University
+    of Akureyri", "required": true}, {"type": "double", "name": "University_University
+    of Al Quaraouiyine", "required": true}, {"type": "double", "name": "University_University
+    of Alberta", "required": true}, {"type": "double", "name": "University_University
+    of Algarve", "required": true}, {"type": "double", "name": "University_University
+    of Amsterdam", "required": true}, {"type": "double", "name": "University_University
+    of Antwerp", "required": true}, {"type": "double", "name": "University_University
+    of Auckland", "required": true}, {"type": "double", "name": "University_University
+    of Aveiro", "required": true}, {"type": "double", "name": "University_University
+    of Bahrain", "required": true}, {"type": "double", "name": "University_University
+    of Barcelona", "required": true}, {"type": "double", "name": "University_University
+    of Basel", "required": true}, {"type": "double", "name": "University_University
+    of Bath", "required": true}, {"type": "double", "name": "University_University
+    of Belgrade", "required": true}, {"type": "double", "name": "University_University
+    of Bergen", "required": true}, {"type": "double", "name": "University_University
+    of Bern", "required": true}, {"type": "double", "name": "University_University
+    of Birmingham", "required": true}, {"type": "double", "name": "University_University
+    of Bologna", "required": true}, {"type": "double", "name": "University_University
+    of Bonn", "required": true}, {"type": "double", "name": "University_University
+    of Bordeaux", "required": true}, {"type": "double", "name": "University_University
+    of Bremen", "required": true}, {"type": "double", "name": "University_University
+    of Bristol", "required": true}, {"type": "double", "name": "University_University
+    of British Columbia", "required": true}, {"type": "double", "name": "University_University
+    of Buenos Aires", "required": true}, {"type": "double", "name": "University_University
+    of Calgary", "required": true}, {"type": "double", "name": "University_University
+    of Cambridge", "required": true}, {"type": "double", "name": "University_University
+    of Canberra", "required": true}, {"type": "double", "name": "University_University
+    of Canterbury", "required": true}, {"type": "double", "name": "University_University
+    of Cape Coast", "required": true}, {"type": "double", "name": "University_University
+    of Cape Town", "required": true}, {"type": "double", "name": "University_University
+    of Carthage", "required": true}, {"type": "double", "name": "University_University
+    of Chicago", "required": true}, {"type": "double", "name": "University_University
+    of Coimbra", "required": true}, {"type": "double", "name": "University_University
+    of Cologne", "required": true}, {"type": "double", "name": "University_University
+    of Colorado", "required": true}, {"type": "double", "name": "University_University
+    of Constantine", "required": true}, {"type": "double", "name": "University_University
+    of Copenhagen", "required": true}, {"type": "double", "name": "University_University
+    of Craiova", "required": true}, {"type": "double", "name": "University_University
+    of Crete", "required": true}, {"type": "double", "name": "University_University
+    of Cyprus", "required": true}, {"type": "double", "name": "University_University
+    of Debrecen", "required": true}, {"type": "double", "name": "University_University
+    of Denver", "required": true}, {"type": "double", "name": "University_University
+    of Dubai", "required": true}, {"type": "double", "name": "University_University
+    of Dubrovnik", "required": true}, {"type": "double", "name": "University_University
+    of Dundee", "required": true}, {"type": "double", "name": "University_University
+    of Eastern Finland", "required": true}, {"type": "double", "name": "University_University
+    of Edinburgh", "required": true}, {"type": "double", "name": "University_University
+    of Essex", "required": true}, {"type": "double", "name": "University_University
+    of Exeter", "required": true}, {"type": "double", "name": "University_University
+    of Florence", "required": true}, {"type": "double", "name": "University_University
+    of Florida", "required": true}, {"type": "double", "name": "University_University
+    of Freiburg", "required": true}, {"type": "double", "name": "University_University
+    of Fribourg", "required": true}, {"type": "double", "name": "University_University
+    of Gabes", "required": true}, {"type": "double", "name": "University_University
+    of Geneva", "required": true}, {"type": "double", "name": "University_University
+    of Ghana", "required": true}, {"type": "double", "name": "University_University
+    of Glasgow", "required": true}, {"type": "double", "name": "University_University
+    of Granada", "required": true}, {"type": "double", "name": "University_University
+    of Greenwich", "required": true}, {"type": "double", "name": "University_University
+    of Groningen", "required": true}, {"type": "double", "name": "University_University
+    of Hamburg", "required": true}, {"type": "double", "name": "University_University
+    of Health Sciences", "required": true}, {"type": "double", "name": "University_University
+    of Helsinki", "required": true}, {"type": "double", "name": "University_University
+    of Hull", "required": true}, {"type": "double", "name": "University_University
+    of Iceland", "required": true}, {"type": "double", "name": "University_University
+    of Illinois Urbana-Champaign", "required": true}, {"type": "double", "name": "University_University
+    of Indonesia", "required": true}, {"type": "double", "name": "University_University
+    of Innsbruck", "required": true}, {"type": "double", "name": "University_University
+    of Ioannina", "required": true}, {"type": "double", "name": "University_University
+    of Jena", "required": true}, {"type": "double", "name": "University_University
+    of Jyv\u00e4skyl\u00e4", "required": true}, {"type": "double", "name": "University_University
+    of Kent", "required": true}, {"type": "double", "name": "University_University
+    of Klagenfurt", "required": true}, {"type": "double", "name": "University_University
+    of Kragujevac", "required": true}, {"type": "double", "name": "University_University
+    of Lagos", "required": true}, {"type": "double", "name": "University_University
+    of Leeds", "required": true}, {"type": "double", "name": "University_University
+    of Leicester", "required": true}, {"type": "double", "name": "University_University
+    of Liege", "required": true}, {"type": "double", "name": "University_University
+    of Lille", "required": true}, {"type": "double", "name": "University_University
+    of Limerick", "required": true}, {"type": "double", "name": "University_University
+    of Lisbon", "required": true}, {"type": "double", "name": "University_University
+    of Liverpool", "required": true}, {"type": "double", "name": "University_University
+    of Ljubljana", "required": true}, {"type": "double", "name": "University_University
+    of Lucerne", "required": true}, {"type": "double", "name": "University_University
+    of Luxembourg", "required": true}, {"type": "double", "name": "University_University
+    of Lyon", "required": true}, {"type": "double", "name": "University_University
+    of Macedonia", "required": true}, {"type": "double", "name": "University_University
+    of Madeira", "required": true}, {"type": "double", "name": "University_University
+    of Malaya", "required": true}, {"type": "double", "name": "University_University
+    of Manchester", "required": true}, {"type": "double", "name": "University_University
+    of Manitoba", "required": true}, {"type": "double", "name": "University_University
+    of Maribor", "required": true}, {"type": "double", "name": "University_University
+    of Melbourne", "required": true}, {"type": "double", "name": "University_University
+    of Michigan", "required": true}, {"type": "double", "name": "University_University
+    of Minho", "required": true}, {"type": "double", "name": "University_University
+    of Minnesota", "required": true}, {"type": "double", "name": "University_University
+    of Miskolc", "required": true}, {"type": "double", "name": "University_University
+    of Monastir", "required": true}, {"type": "double", "name": "University_University
+    of Mons", "required": true}, {"type": "double", "name": "University_University
+    of Montpellier", "required": true}, {"type": "double", "name": "University_University
+    of Montreal", "required": true}, {"type": "double", "name": "University_University
+    of Naples", "required": true}, {"type": "double", "name": "University_University
+    of Neuchatel", "required": true}, {"type": "double", "name": "University_University
+    of New Brunswick", "required": true}, {"type": "double", "name": "University_University
+    of New England", "required": true}, {"type": "double", "name": "University_University
+    of New South Wales", "required": true}, {"type": "double", "name": "University_University
+    of Newcastle", "required": true}, {"type": "double", "name": "University_University
+    of Nice", "required": true}, {"type": "double", "name": "University_University
+    of Nis", "required": true}, {"type": "double", "name": "University_University
+    of Nottingham", "required": true}, {"type": "double", "name": "University_University
+    of Nova Gorica", "required": true}, {"type": "double", "name": "University_University
+    of Novi Sad", "required": true}, {"type": "double", "name": "University_University
+    of Oran", "required": true}, {"type": "double", "name": "University_University
+    of Osijek", "required": true}, {"type": "double", "name": "University_University
+    of Oslo", "required": true}, {"type": "double", "name": "University_University
+    of Otago", "required": true}, {"type": "double", "name": "University_University
+    of Ottawa", "required": true}, {"type": "double", "name": "University_University
+    of Oulu", "required": true}, {"type": "double", "name": "University_University
+    of Oxford", "required": true}, {"type": "double", "name": "University_University
+    of Padua", "required": true}, {"type": "double", "name": "University_University
+    of Pannonia", "required": true}, {"type": "double", "name": "University_University
+    of Patras", "required": true}, {"type": "double", "name": "University_University
+    of Pecs", "required": true}, {"type": "double", "name": "University_University
+    of Pennsylvania", "required": true}, {"type": "double", "name": "University_University
+    of Piraeus", "required": true}, {"type": "double", "name": "University_University
+    of Pisa", "required": true}, {"type": "double", "name": "University_University
+    of Plymouth", "required": true}, {"type": "double", "name": "University_University
+    of Porto", "required": true}, {"type": "double", "name": "University_University
+    of Portsmouth", "required": true}, {"type": "double", "name": "University_University
+    of Primorska", "required": true}, {"type": "double", "name": "University_University
+    of Queensland", "required": true}, {"type": "double", "name": "University_University
+    of Reading", "required": true}, {"type": "double", "name": "University_University
+    of Regina", "required": true}, {"type": "double", "name": "University_University
+    of Rijeka", "required": true}, {"type": "double", "name": "University_University
+    of Ruse", "required": true}, {"type": "double", "name": "University_University
+    of Salamanca", "required": true}, {"type": "double", "name": "University_University
+    of Salford", "required": true}, {"type": "double", "name": "University_University
+    of Salzburg", "required": true}, {"type": "double", "name": "University_University
+    of Sao Paulo", "required": true}, {"type": "double", "name": "University_University
+    of Saskatchewan", "required": true}, {"type": "double", "name": "University_University
+    of Science and Technology", "required": true}, {"type": "double", "name": "University_University
+    of Sfax", "required": true}, {"type": "double", "name": "University_University
+    of Sheffield", "required": true}, {"type": "double", "name": "University_University
+    of Sherbrooke", "required": true}, {"type": "double", "name": "University_University
+    of Silesia", "required": true}, {"type": "double", "name": "University_University
+    of Sousse", "required": true}, {"type": "double", "name": "University_University
+    of South-Eastern Norway", "required": true}, {"type": "double", "name": "University_University
+    of Southampton", "required": true}, {"type": "double", "name": "University_University
+    of Southern Denmark", "required": true}, {"type": "double", "name": "University_University
+    of Southern Queensland", "required": true}, {"type": "double", "name": "University_University
+    of Split", "required": true}, {"type": "double", "name": "University_University
+    of St. Gallen", "required": true}, {"type": "double", "name": "University_University
+    of Stavanger", "required": true}, {"type": "double", "name": "University_University
+    of Strasbourg", "required": true}, {"type": "double", "name": "University_University
+    of Strathclyde", "required": true}, {"type": "double", "name": "University_University
+    of Stuttgart", "required": true}, {"type": "double", "name": "University_University
+    of Subotica", "required": true}, {"type": "double", "name": "University_University
+    of Surrey", "required": true}, {"type": "double", "name": "University_University
+    of Sussex", "required": true}, {"type": "double", "name": "University_University
+    of Sydney", "required": true}, {"type": "double", "name": "University_University
+    of Szeged", "required": true}, {"type": "double", "name": "University_University
+    of Tabriz", "required": true}, {"type": "double", "name": "University_University
+    of Tabuk", "required": true}, {"type": "double", "name": "University_University
+    of Tasmania", "required": true}, {"type": "double", "name": "University_University
+    of Technology Sydney", "required": true}, {"type": "double", "name": "University_University
+    of Texas Austin", "required": true}, {"type": "double", "name": "University_University
+    of Thessaly", "required": true}, {"type": "double", "name": "University_University
+    of Tlemcen", "required": true}, {"type": "double", "name": "University_University
+    of Tokyo", "required": true}, {"type": "double", "name": "University_University
+    of Toronto", "required": true}, {"type": "double", "name": "University_University
+    of Toulouse", "required": true}, {"type": "double", "name": "University_University
+    of Tsukuba", "required": true}, {"type": "double", "name": "University_University
+    of Tunis", "required": true}, {"type": "double", "name": "University_University
+    of Turku", "required": true}, {"type": "double", "name": "University_University
+    of Twente", "required": true}, {"type": "double", "name": "University_University
+    of Ulsan", "required": true}, {"type": "double", "name": "University_University
+    of Vaasa", "required": true}, {"type": "double", "name": "University_University
+    of Victoria", "required": true}, {"type": "double", "name": "University_University
+    of Vienna", "required": true}, {"type": "double", "name": "University_University
+    of Waikato", "required": true}, {"type": "double", "name": "University_University
+    of Warsaw", "required": true}, {"type": "double", "name": "University_University
+    of Warwick", "required": true}, {"type": "double", "name": "University_University
+    of Washington", "required": true}, {"type": "double", "name": "University_University
+    of Waterloo", "required": true}, {"type": "double", "name": "University_University
+    of Western Australia", "required": true}, {"type": "double", "name": "University_University
+    of Westminster", "required": true}, {"type": "double", "name": "University_University
+    of Windsor", "required": true}, {"type": "double", "name": "University_University
+    of Wisconsin", "required": true}, {"type": "double", "name": "University_University
+    of Wisconsin-Madison", "required": true}, {"type": "double", "name": "University_University
+    of Wollongong", "required": true}, {"type": "double", "name": "University_University
+    of Zadar", "required": true}, {"type": "double", "name": "University_University
+    of Zagreb", "required": true}, {"type": "double", "name": "University_University
+    of Zaragoza", "required": true}, {"type": "double", "name": "University_University
+    of the Aegean", "required": true}, {"type": "double", "name": "University_University
+    of the Basque Country", "required": true}, {"type": "double", "name": "University_Universit\u00e9
+    Nice Sophia Antipolis", "required": true}, {"type": "double", "name": "University_Universit\u00e9
+    de Lille", "required": true}, {"type": "double", "name": "University_Universit\u00e9
+    de Sherbrooke", "required": true}, {"type": "double", "name": "University_Uppsala
+    University", "required": true}, {"type": "double", "name": "University_Ural Federal
+    University", "required": true}, {"type": "double", "name": "University_Utrecht
+    University", "required": true}, {"type": "double", "name": "University_VU Amsterdam",
+    "required": true}, {"type": "double", "name": "University_Vanderbilt University",
+    "required": true}, {"type": "double", "name": "University_Victoria University",
+    "required": true}, {"type": "double", "name": "University_Vrije Universiteit Brussel",
+    "required": true}, {"type": "double", "name": "University_Wageningen University",
+    "required": true}, {"type": "double", "name": "University_Waterford IT", "required":
+    true}, {"type": "double", "name": "University_Western University", "required":
+    true}, {"type": "double", "name": "University_Wroclaw University of Technology",
+    "required": true}, {"type": "double", "name": "University_Wuhan University", "required":
+    true}, {"type": "double", "name": "University_Xi''an Jiaotong University", "required":
+    true}, {"type": "double", "name": "University_Yale University", "required": true},
+    {"type": "double", "name": "University_Yeungnam University", "required": true},
+    {"type": "double", "name": "University_Yonsei University", "required": true},
+    {"type": "double", "name": "University_ZHAW", "required": true}, {"type": "double",
+    "name": "University_Zhejiang University", "required": true}, {"type": "double",
+    "name": "University_\u00c9cole Normale Sup\u00e9rieure", "required": true}, {"type":
+    "double", "name": "University_\u00c9cole Normale Sup\u00e9rieure Lyon", "required":
+    true}, {"type": "double", "name": "University_\u00c9cole Polytechnique", "required":
+    true}, {"type": "double", "name": "Program_Aerospace Engineering", "required":
+    true}, {"type": "double", "name": "Program_Applied Mathematics", "required": true},
+    {"type": "double", "name": "Program_Architecture", "required": true}, {"type":
+    "double", "name": "Program_Artificial Intelligence", "required": true}, {"type":
+    "double", "name": "Program_Bioinformatics", "required": true}, {"type": "double",
+    "name": "Program_Biomedical Sciences", "required": true}, {"type": "double", "name":
+    "Program_Biotechnology", "required": true}, {"type": "double", "name": "Program_Business",
+    "required": true}, {"type": "double", "name": "Program_Business Analytics", "required":
+    true}, {"type": "double", "name": "Program_Business Informatics", "required":
+    true}, {"type": "double", "name": "Program_Chemical Engineering", "required":
+    true}, {"type": "double", "name": "Program_Chemistry", "required": true}, {"type":
+    "double", "name": "Program_Climate Science", "required": true}, {"type": "double",
+    "name": "Program_Computational Science", "required": true}, {"type": "double",
+    "name": "Program_Computer Engineering", "required": true}, {"type": "double",
+    "name": "Program_Computer Networks", "required": true}, {"type": "double", "name":
+    "Program_Computer Science", "required": true}, {"type": "double", "name": "Program_Computer
+    Science & Design", "required": true}, {"type": "double", "name": "Program_Computer
+    Systems", "required": true}, {"type": "double", "name": "Program_Computing", "required":
+    true}, {"type": "double", "name": "Program_Computing & Innovation", "required":
+    true}, {"type": "double", "name": "Program_Computing Science", "required": true},
+    {"type": "double", "name": "Program_Computing Systems", "required": true}, {"type":
+    "double", "name": "Program_Cybersecurity", "required": true}, {"type": "double",
+    "name": "Program_Data Analytics", "required": true}, {"type": "double", "name":
+    "Program_Data Engineering", "required": true}, {"type": "double", "name": "Program_Data
+    Science", "required": true}, {"type": "double", "name": "Program_Data Science
+    & AI", "required": true}, {"type": "double", "name": "Program_Data Systems", "required":
+    true}, {"type": "double", "name": "Program_Design", "required": true}, {"type":
+    "double", "name": "Program_Digital Business", "required": true}, {"type": "double",
+    "name": "Program_Digital Design", "required": true}, {"type": "double", "name":
+    "Program_Digital Engineering", "required": true}, {"type": "double", "name": "Program_Digital
+    Innovation", "required": true}, {"type": "double", "name": "Program_Digital Media",
+    "required": true}, {"type": "double", "name": "Program_Digital Systems", "required":
+    true}, {"type": "double", "name": "Program_Digital Systems & AI", "required":
+    true}, {"type": "double", "name": "Program_Economics", "required": true}, {"type":
+    "double", "name": "Program_Electrical Engineering", "required": true}, {"type":
+    "double", "name": "Program_Electronic Engineering", "required": true}, {"type":
+    "double", "name": "Program_Electronics", "required": true}, {"type": "double",
+    "name": "Program_Electronics Engineering", "required": true}, {"type": "double",
+    "name": "Program_Energy Engineering", "required": true}, {"type": "double", "name":
+    "Program_Engineering", "required": true}, {"type": "double", "name": "Program_Engineering
+    Management", "required": true}, {"type": "double", "name": "Program_Engineering
+    Physics", "required": true}, {"type": "double", "name": "Program_Environmental
+    Computing", "required": true}, {"type": "double", "name": "Program_Environmental
+    Engineering", "required": true}, {"type": "double", "name": "Program_Environmental
+    Science", "required": true}, {"type": "double", "name": "Program_Finance", "required":
+    true}, {"type": "double", "name": "Program_Forestry Sciences", "required": true},
+    {"type": "double", "name": "Program_Game Technology", "required": true}, {"type":
+    "double", "name": "Program_Industrial Engineering", "required": true}, {"type":
+    "double", "name": "Program_Industrial Management", "required": true}, {"type":
+    "double", "name": "Program_Information Science", "required": true}, {"type": "double",
+    "name": "Program_Information Security", "required": true}, {"type": "double",
+    "name": "Program_Information Systems", "required": true}, {"type": "double", "name":
+    "Program_Information Technology", "required": true}, {"type": "double", "name":
+    "Program_International Business", "required": true}, {"type": "double", "name":
+    "Program_International Relations", "required": true}, {"type": "double", "name":
+    "Program_Machine Learning", "required": true}, {"type": "double", "name": "Program_Marine
+    Biology", "required": true}, {"type": "double", "name": "Program_Marine Technology",
+    "required": true}, {"type": "double", "name": "Program_Materials Science", "required":
+    true}, {"type": "double", "name": "Program_Mathematics", "required": true}, {"type":
+    "double", "name": "Program_Mechanical Engineering", "required": true}, {"type":
+    "double", "name": "Program_Mechatronics", "required": true}, {"type": "double",
+    "name": "Program_Medicine", "required": true}, {"type": "double", "name": "Program_Molecular
+    Biology", "required": true}, {"type": "double", "name": "Program_Neuroscience",
+    "required": true}, {"type": "double", "name": "Program_Petroleum Engineering",
+    "required": true}, {"type": "double", "name": "Program_Pharmaceutical Sciences",
+    "required": true}, {"type": "double", "name": "Program_Photonics", "required":
+    true}, {"type": "double", "name": "Program_Physics", "required": true}, {"type":
+    "double", "name": "Program_Political Science", "required": true}, {"type": "double",
+    "name": "Program_Psychology", "required": true}, {"type": "double", "name": "Program_Quantum
+    Computing", "required": true}, {"type": "double", "name": "Program_Quantum Engineering",
+    "required": true}, {"type": "double", "name": "Program_Renewable Energy", "required":
+    true}, {"type": "double", "name": "Program_Robotics", "required": true}, {"type":
+    "double", "name": "Program_Robotics & AI", "required": true}, {"type": "double",
+    "name": "Program_Robotics Engineering", "required": true}, {"type": "double",
+    "name": "Program_Social Sciences", "required": true}, {"type": "double", "name":
+    "Program_Software Development", "required": true}, {"type": "double", "name":
+    "Program_Software Engineering", "required": true}, {"type": "double", "name":
+    "Program_Software Science", "required": true}, {"type": "double", "name": "Program_Software
+    Systems", "required": true}, {"type": "double", "name": "Program_Sustainable Energy",
+    "required": true}, {"type": "double", "name": "Program_Sustainable Technology",
+    "required": true}, {"type": "double", "name": "Program_Systems Engineering", "required":
+    true}, {"type": "double", "name": "Program_Technology & Innovation", "required":
+    true}, {"type": "double", "name": "Level_Master", "required": true}, {"type":
+    "double", "name": "Level_PhD", "required": true}, {"type": "double", "name": "Tuition_USD",
+    "required": true}, {"type": "double", "name": "Living_Cost_Index", "required":
+    true}, {"type": "double", "name": "Rent_USD", "required": true}, {"type": "double",
+    "name": "Visa_Fee_USD", "required": true}, {"type": "double", "name": "Insurance_USD",
+    "required": true}]'
+  outputs: '[{"type": "float", "required": true}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-20 15:32:43.295487'

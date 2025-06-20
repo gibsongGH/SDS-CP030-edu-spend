@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/721633078460617009/92deda2e045249cc8834a5227e11180b/artifacts
+end_time: 1750436056781
+entry_point_name: ''
+experiment_id: '721633078460617009'
+lifecycle_stage: active
+run_id: 92deda2e045249cc8834a5227e11180b
+run_name: XGBoost_Classifier
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750436056702
+status: 3
+tags: []
+user_id: cholponzhakshylykova
