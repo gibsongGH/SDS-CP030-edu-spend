@@ -34,6 +34,8 @@ This folder contains my contribution to the **EduSpend: Global Higher-Education 
 
 ### Cost Structure Insights
 - [To be completed as analysis progresses]
+- Rent, Living Cost, and Tuition form a cluster of interrelated cost variables. Places with higher tuition tend to have higher rent (.72). Rent increases as Living Cost increases (.81)
+![Correlation Heatmap](images/correlation_heatmap.png)
 
 ### Outlier Detection
 - [To be completed as analysis progresses]
@@ -78,4 +80,4 @@ For questions about this analysis, please reach out through the project's contri
 
 ---
 *Last Updated: [Current Date]*
-*Project Phase: 1 - EDA* 
+*Project Phase: 1 - EDA*
