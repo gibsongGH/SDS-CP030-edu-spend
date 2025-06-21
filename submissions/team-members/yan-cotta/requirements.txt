@@ -10,6 +10,9 @@ xgboost>=1.7.0
 # MLflow for experiment tracking
 mlflow>=2.0.0
 
+# Data download utilities
+kagglehub>=0.2.0
+
 # Visualization libraries
 matplotlib>=3.6.0
 seaborn>=0.12.0
@@ -18,6 +21,11 @@ plotly>=5.15.0
 # Jupyter notebook support
 jupyter>=1.0.0
 ipykernel>=6.0.0
+
+# Phase 3: Deployment libraries
+streamlit>=1.28.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
 
 # Additional utilities
 openpyxl>=3.1.0  # For Excel file support if needed
