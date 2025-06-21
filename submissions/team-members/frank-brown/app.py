@@ -47,18 +47,27 @@ def load_data():
 
 @st.cache_resource
 def load_models():
-    tca_model = joblib.load('models/tca_predictor.joblib')
-    affordability_model = joblib.load('models/affordability_classifier.joblib')
-    return tca_model, affordability_model
+    try:
+        tca_model = joblib.load('models/tca_predictor.joblib')
+        affordability_model = joblib.load('models/affordability_classifier.joblib')
+        return tca_model, affordability_model
+    except Exception as e:
+        st.error(f"Error loading models: {str(e)}")
+        return None, None
 
 # Load data
-df = load_data()
 try:
-    tca_model, affordability_model = load_models()
-    models_loaded = True
-except:
-    models_loaded = False
-    st.warning("Models not found. Cost prediction features will be disabled.")
+    df = load_data()
+except Exception as e:
+    st.error(f"Error loading data: {str(e)}")
+    st.stop()
+
+# Load models
+tca_model, affordability_model = load_models()
+models_loaded = tca_model is not None and affordability_model is not None
+
+if not models_loaded:
+    st.warning("Models not loaded successfully. Cost prediction features will be disabled.")
 
 # Sidebar navigation
 with st.sidebar:
@@ -197,6 +206,8 @@ elif selected == "Cost Predictor":
         
         with col1:
             pred_country = st.selectbox("Country", sorted(df['Country'].unique()))
+            pred_city = st.selectbox("City", sorted(df[df['Country'] == pred_country]['City'].unique()))
+            pred_university = st.selectbox("University", sorted(df[df['Country'] == pred_country]['University'].unique()))
             pred_program = st.selectbox("Program", sorted(df['Program'].unique()))
             pred_level = st.selectbox("Level", sorted(df['Level'].unique()))
         
@@ -206,17 +217,32 @@ elif selected == "Cost Predictor":
         
         if st.button("Predict Cost"):
             # Create input data
+            # Get reference values
+            rent_usd = df[df['City'] == pred_city]['Rent_USD'].mean()
+            insurance_usd = df[df['Country'] == pred_country]['Insurance_USD'].mean()
+            visa_fee = df[df['Country'] == pred_country]['Visa_Fee_USD'].mean()
+            
+            # Calculate derived features
+            total_living_cost = (rent_usd * 12 + insurance_usd * pred_duration)
+            tuition_to_rent_ratio = pred_tuition / rent_usd if rent_usd > 0 else 0
+            cost_per_year = (pred_tuition + total_living_cost + visa_fee) / pred_duration
+            
             input_data = pd.DataFrame({
                 'Country': [pred_country],
+                'City': [pred_city],
+                'University': [pred_university],
                 'Program': [pred_program],
                 'Level': [pred_level],
                 'Duration_Years': [pred_duration],
                 'Tuition_USD': [pred_tuition],
-                'Living_Cost_Index': [df[df['Country'] == pred_country]['Living_Cost_Index'].mean()],
-                'Rent_USD': [df[df['Country'] == pred_country]['Rent_USD'].mean()],
-                'Visa_Fee_USD': [df[df['Country'] == pred_country]['Visa_Fee_USD'].mean()],
-                'Insurance_USD': [df[df['Country'] == pred_country]['Insurance_USD'].mean()],
-                'Exchange_Rate': [df[df['Country'] == pred_country]['Exchange_Rate'].mean()]
+                'Living_Cost_Index': [df[df['City'] == pred_city]['Living_Cost_Index'].mean()],
+                'Rent_USD': [rent_usd],
+                'Visa_Fee_USD': [visa_fee],
+                'Insurance_USD': [insurance_usd],
+                'Exchange_Rate': [df[df['Country'] == pred_country]['Exchange_Rate'].mean()],
+                'Total_Living_Cost': [total_living_cost],
+                'Tuition_to_Rent_Ratio': [tuition_to_rent_ratio],
+                'Cost_per_Year': [cost_per_year]
             })
             
             # Make predictions
