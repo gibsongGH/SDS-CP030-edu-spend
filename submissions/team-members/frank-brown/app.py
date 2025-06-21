@@ -217,6 +217,16 @@ elif selected == "Cost Predictor":
         
         if st.button("Predict Cost"):
             # Create input data
+            # Get reference values
+            rent_usd = df[df['City'] == pred_city]['Rent_USD'].mean()
+            insurance_usd = df[df['Country'] == pred_country]['Insurance_USD'].mean()
+            visa_fee = df[df['Country'] == pred_country]['Visa_Fee_USD'].mean()
+            
+            # Calculate derived features
+            total_living_cost = (rent_usd * 12 + insurance_usd * pred_duration)
+            tuition_to_rent_ratio = pred_tuition / rent_usd if rent_usd > 0 else 0
+            cost_per_year = (pred_tuition + total_living_cost + visa_fee) / pred_duration
+            
             input_data = pd.DataFrame({
                 'Country': [pred_country],
                 'City': [pred_city],
@@ -226,10 +236,13 @@ elif selected == "Cost Predictor":
                 'Duration_Years': [pred_duration],
                 'Tuition_USD': [pred_tuition],
                 'Living_Cost_Index': [df[df['City'] == pred_city]['Living_Cost_Index'].mean()],
-                'Rent_USD': [df[df['City'] == pred_city]['Rent_USD'].mean()],
-                'Visa_Fee_USD': [df[df['Country'] == pred_country]['Visa_Fee_USD'].mean()],
-                'Insurance_USD': [df[df['Country'] == pred_country]['Insurance_USD'].mean()],
-                'Exchange_Rate': [df[df['Country'] == pred_country]['Exchange_Rate'].mean()]
+                'Rent_USD': [rent_usd],
+                'Visa_Fee_USD': [visa_fee],
+                'Insurance_USD': [insurance_usd],
+                'Exchange_Rate': [df[df['Country'] == pred_country]['Exchange_Rate'].mean()],
+                'Total_Living_Cost': [total_living_cost],
+                'Tuition_to_Rent_Ratio': [tuition_to_rent_ratio],
+                'Cost_per_Year': [cost_per_year]
             })
             
             # Make predictions
