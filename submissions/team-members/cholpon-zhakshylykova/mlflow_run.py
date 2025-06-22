@@ -26,7 +26,7 @@ for f in glob.glob("*.png"):
     os.remove(f)
 
 # --- Load data ---
-data = pd.read_csv("data_full.csv")
+data = pd.read_csv("data_full_filtered.csv")
 
 # --- Feature configuration ---
 categorical_features = ["Country", "City", "University", "Program", "Level"]

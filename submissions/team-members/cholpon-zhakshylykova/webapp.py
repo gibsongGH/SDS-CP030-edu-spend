@@ -12,7 +12,7 @@ st.title("🎓 International Education Budget Planner")
 # --- Load Data ---
 @st.cache_data
 def load_data():
-    return pd.read_csv("data_full.csv")
+    return pd.read_csv("data_full_filtered.csv")
 
 data = load_data()
 
@@ -27,30 +27,13 @@ regressor = components["regressor"]
 encoder = components["encoder"]
 scaler = components["scaler"]
 
-# --- Load Model and Preprocessors ---
-@st.cache_resource
-def load_model_components():
-    path = os.path.join(os.path.dirname(__file__), 'model_pipeline.pkl')
-    st.write("🔍 Loading model from:", path)  # Debug: Show full path
-    return joblib.load(path)
-
-components = load_model_components()
-regressor = components["regressor"]
-encoder = components["encoder"]
-scaler = components["scaler"]
-
-# --- Debug: Print expected feature names ---
-st.write("✅ Regressor expects features:", getattr(regressor, 'feature_names_in_', 'Not available'))
-st.write("✅ Scaler expects numeric features:", getattr(scaler, 'feature_names_in_', 'Not available'))
-
-
 # --- Sidebar Inputs ---
 st.sidebar.header("📥 Input Parameters")
 target_country = st.sidebar.selectbox("Select Country", sorted(data["Country"].dropna().unique()))
 level = st.sidebar.selectbox("Select Level", sorted(data["Level"].dropna().unique()))
 duration = st.sidebar.slider("Select Duration (Years)", min_value=1, max_value=6, value=4)
 
-# Suggest common options or allow further UI expansion later
+# Suggest defaults
 filtered = data[data["Country"] == target_country]
 most_common_city = filtered["City"].mode()[0] if not filtered.empty else "Unknown"
 most_common_university = filtered["University"].mode()[0] if not filtered.empty else "Unknown"
@@ -72,7 +55,7 @@ user_input = pd.DataFrame({
     "Level": [level],
     "Tuition_USD": [tuition],
     "Living_Cost_Index": [living_index],
-    "Rent_USD": [rent * 12],  # annualized
+    "Rent_USD": [rent * 12],  # annual
     "Visa_Fee_USD": [visa_fee],
     "Insurance_USD": [insurance],
     "Duration_Years": [duration]
@@ -93,25 +76,64 @@ except Exception as e:
 # --- Input Validation ---
 if user_features.shape[1] != regressor.n_features_in_:
     st.error(f"Feature mismatch: model expects {regressor.n_features_in_} features but got {user_features.shape[1]}.")
-    st.write("A category may be unknown. Try a different combination.")
+    st.write("Try selecting a different country or level to match trained data.")
     st.stop()
 
 # --- Prediction ---
-predicted_tca = regressor.predict(user_features)[0]
+# Combine encoded and scaled input into a DataFrame with correct column names
+input_df = pd.DataFrame(
+    user_features,
+    columns=encoder.get_feature_names_out(categorical_features).tolist() + numeric_features
+)
+predicted_tca = regressor.predict(input_df)[0]
+
 st.sidebar.markdown("### 💰 Predicted TCA")
 st.sidebar.metric(label="Estimated Total Cost (USD)", value=f"${predicted_tca:,.2f}")
 
 # --- Affordability Map ---
+# --- Enhanced Affordability Map ---
+import plotly.graph_objects as go
+
+import plotly.express as px
+
 st.subheader("🌍 Global Affordability Map")
-affordability_map = px.choropleth(
-    data,
+
+fig = px.choropleth(
+    data_frame=data,
     locations="Country",
     locationmode="country names",
     color="Total_cost",
-    color_continuous_scale="Viridis",
-    title="Average Total Cost of Attendance by Country"
+    hover_name="Country",
+    color_continuous_scale="Turbo",  # Vibrant & modern gradient
+    range_color=(data["Total_cost"].min(), data["Total_cost"].max()),
+    title="🌍 Average Total Cost of Attendance by Country",
+    labels={"Total_cost": "Total Cost (USD)"},
 )
-st.plotly_chart(affordability_map, use_container_width=True)
+
+fig.update_geos(
+    showframe=False,
+    showcoastlines=False,
+    projection_type="natural earth",  # Clean flat projection
+)
+
+fig.update_layout(
+    margin=dict(l=0, r=0, t=40, b=0),
+    paper_bgcolor="rgba(0,0,0,0)",
+    geo_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="white", size=14),
+    title_font=dict(size=20, color="white"),
+    coloraxis_colorbar=dict(
+        title="Total Cost (USD)",
+        tickprefix="$",
+        thickness=15,
+        len=0.75,
+        bgcolor="rgba(0,0,0,0)",
+        title_side="right",
+    )
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
 
 # --- Cluster Explorer ---
 st.subheader("📊 Cost Cluster Explorer")
@@ -120,13 +142,15 @@ if cluster_cols:
     cluster_option = st.selectbox("Select Cluster Type", cluster_cols)
     cluster_summary = data.groupby(cluster_option).mean(numeric_only=True).reset_index()
     st.dataframe(cluster_summary)
-    
+
     with st.expander("ℹ️ Cluster Segment Descriptions"):
         st.markdown("""
-        - **Low Cost Cluster**: Countries or institutions with total annual costs typically below $20,000.
-        - **Medium Cost Cluster**: Costs between $20,000 and $40,000.
-        - **High Cost Cluster**: Prestigious or expensive locations typically exceeding $40,000 annually.
-        """)
+        <ul>
+        <li><b>Low Cost Cluster</b>: Total annual costs typically below <b>$20,000</b>.</li>
+        <li><b>Medium Cost Cluster</b>: Between <b>$20,000</b> and <b>$40,000</b>.</li>
+        <li><b>High Cost Cluster</b>: Above <b>$40,000</b> annually.</li>
+        </ul>
+        """, unsafe_allow_html=True)
 else:
     st.warning("No cluster columns found in the dataset.")
 
@@ -141,5 +165,5 @@ st.markdown("""
 4. Explore cost trends with:
    - 🌍 Affordability Map
    - 📊 Cost Cluster Explorer
-5. Use the cluster segment guide to compare between countries or schools.
+5. Use the cluster guide to compare regions or institutions.
 """)
