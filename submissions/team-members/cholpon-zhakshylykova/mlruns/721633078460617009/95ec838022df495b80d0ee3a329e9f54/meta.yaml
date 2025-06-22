@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/721633078460617009/95ec838022df495b80d0ee3a329e9f54/artifacts
+end_time: 1750596060164
+entry_point_name: ''
+experiment_id: '721633078460617009'
+lifecycle_stage: active
+run_id: 95ec838022df495b80d0ee3a329e9f54
+run_name: GradientBoosting_Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750596055418
+status: 3
+tags: []
+user_id: cholponzhakshylykova

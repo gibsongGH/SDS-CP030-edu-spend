@@ -1,0 +1,10 @@
+artifact_location: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/721633078460617009/models/m-88ef07f2f3504d42a616448af14bf36e/artifacts
+creation_timestamp: 1750580736848
+experiment_id: '721633078460617009'
+last_updated_timestamp: 1750580738341
+model_id: m-88ef07f2f3504d42a616448af14bf36e
+model_type: null
+name: model
+source_run_id: 20f6ba1fdf6d4221aa1c8dd879ce64d5
+status: 2
+status_message: null

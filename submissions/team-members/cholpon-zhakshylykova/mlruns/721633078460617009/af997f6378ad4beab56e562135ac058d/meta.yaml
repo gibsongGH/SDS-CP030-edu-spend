@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/cholponzhakshylykova/Desktop/SDS/SDS-CP030-edu-spend/submissions/team-members/cholpon-zhakshylykova/mlruns/721633078460617009/af997f6378ad4beab56e562135ac058d/artifacts
+end_time: 1750598965143
+entry_point_name: ''
+experiment_id: '721633078460617009'
+lifecycle_stage: active
+run_id: af997f6378ad4beab56e562135ac058d
+run_name: XGBoost_Regressor_20250622_152909
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750598959994
+status: 3
+tags: []
+user_id: cholponzhakshylykova
