@@ -27,6 +27,23 @@ regressor = components["regressor"]
 encoder = components["encoder"]
 scaler = components["scaler"]
 
+# --- Load Model and Preprocessors ---
+@st.cache_resource
+def load_model_components():
+    path = os.path.join(os.path.dirname(__file__), 'model_pipeline.pkl')
+    st.write("🔍 Loading model from:", path)  # Debug: Show full path
+    return joblib.load(path)
+
+components = load_model_components()
+regressor = components["regressor"]
+encoder = components["encoder"]
+scaler = components["scaler"]
+
+# --- Debug: Print expected feature names ---
+st.write("✅ Regressor expects features:", getattr(regressor, 'feature_names_in_', 'Not available'))
+st.write("✅ Scaler expects numeric features:", getattr(scaler, 'feature_names_in_', 'Not available'))
+
+
 # --- Sidebar Inputs ---
 st.sidebar.header("📥 Input Parameters")
 target_country = st.sidebar.selectbox("Select Country", sorted(data["Country"].dropna().unique()))
