@@ -4,6 +4,7 @@ import numpy as np
 import os
 import joblib
 import plotly.express as px
+import plotly.graph_objects as go
 
 # --- Page Config ---
 st.set_page_config(page_title='International Education Budget Planner', layout='wide')
@@ -12,20 +13,21 @@ st.title("🎓 International Education Budget Planner")
 # --- Load Data ---
 @st.cache_data
 def load_data():
-    return pd.read_csv("data_full_filtered.csv")
+    return pd.read_csv("data_tca_clusters_raw.csv")
 
 data = load_data()
 
-# --- Load Model and Preprocessors ---
+# --- Load Pipeline ---
 @st.cache_resource
-def load_model_components():
+def load_model_pipeline():
     path = os.path.join(os.path.dirname(__file__), 'model_pipeline.pkl')
     return joblib.load(path)
 
-components = load_model_components()
-regressor = components["regressor"]
-encoder = components["encoder"]
-scaler = components["scaler"]
+pipeline = load_model_pipeline()
+preprocessor = pipeline.named_steps["preprocessor"]
+regressor = pipeline.named_steps["regressor"]
+encoder = preprocessor.named_transformers_["cat"]
+scaler = preprocessor.named_transformers_["num"]
 
 # --- Sidebar Inputs ---
 st.sidebar.header("📥 Input Parameters")
@@ -33,7 +35,6 @@ target_country = st.sidebar.selectbox("Select Country", sorted(data["Country"].d
 level = st.sidebar.selectbox("Select Level", sorted(data["Level"].dropna().unique()))
 duration = st.sidebar.slider("Select Duration (Years)", min_value=1, max_value=6, value=4)
 
-# Suggest defaults
 filtered = data[data["Country"] == target_country]
 most_common_city = filtered["City"].mode()[0] if not filtered.empty else "Unknown"
 most_common_university = filtered["University"].mode()[0] if not filtered.empty else "Unknown"
@@ -46,7 +47,7 @@ rent = st.sidebar.number_input("Monthly Rent (USD)", min_value=0, value=500)
 visa_fee = st.sidebar.number_input("Visa Fee (USD)", min_value=0, value=200)
 insurance = st.sidebar.number_input("Insurance per Year (USD)", min_value=0, value=600)
 
-# --- User Input Frame ---
+# --- Construct Input Frame ---
 user_input = pd.DataFrame({
     "Country": [target_country],
     "City": [most_common_city],
@@ -61,41 +62,17 @@ user_input = pd.DataFrame({
     "Duration_Years": [duration]
 })
 
-categorical_features = ["Country", "City", "University", "Program", "Level"]
-numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD", "Duration_Years"]
-
-# --- Preprocessing ---
-try:
-    encoded_input = encoder.transform(user_input[categorical_features])
-    scaled_input = scaler.transform(user_input[numeric_features])
-    user_features = np.hstack([encoded_input, scaled_input])
-except Exception as e:
-    st.error(f"Error during preprocessing: {e}")
-    st.stop()
-
-# --- Input Validation ---
-if user_features.shape[1] != regressor.n_features_in_:
-    st.error(f"Feature mismatch: model expects {regressor.n_features_in_} features but got {user_features.shape[1]}.")
-    st.write("Try selecting a different country or level to match trained data.")
-    st.stop()
-
 # --- Prediction ---
-# Combine encoded and scaled input into a DataFrame with correct column names
-input_df = pd.DataFrame(
-    user_features,
-    columns=encoder.get_feature_names_out(categorical_features).tolist() + numeric_features
-)
-predicted_tca = regressor.predict(input_df)[0]
+try:
+    predicted_tca = pipeline.predict(user_input)[0]
+except Exception as e:
+    st.error(f"Prediction failed: {e}")
+    st.stop()
 
 st.sidebar.markdown("### 💰 Predicted TCA")
 st.sidebar.metric(label="Estimated Total Cost (USD)", value=f"${predicted_tca:,.2f}")
 
 # --- Affordability Map ---
-# --- Enhanced Affordability Map ---
-import plotly.graph_objects as go
-
-import plotly.express as px
-
 st.subheader("🌍 Global Affordability Map")
 
 fig = px.choropleth(
@@ -104,7 +81,7 @@ fig = px.choropleth(
     locationmode="country names",
     color="Total_cost",
     hover_name="Country",
-    color_continuous_scale="Turbo",  # Vibrant & modern gradient
+    color_continuous_scale="Turbo",
     range_color=(data["Total_cost"].min(), data["Total_cost"].max()),
     title="🌍 Average Total Cost of Attendance by Country",
     labels={"Total_cost": "Total Cost (USD)"},
@@ -113,7 +90,7 @@ fig = px.choropleth(
 fig.update_geos(
     showframe=False,
     showcoastlines=False,
-    projection_type="natural earth",  # Clean flat projection
+    projection_type="natural earth",
 )
 
 fig.update_layout(
@@ -133,7 +110,6 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
-
 
 # --- Cluster Explorer ---
 st.subheader("📊 Cost Cluster Explorer")
