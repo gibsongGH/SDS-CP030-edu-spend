@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/c92703fbbfd2470aa4c4941fdabdcba1/artifacts
+deleted_time: 1751021951107
+end_time: 1750856969628
+entry_point_name: ''
+experiment_id: '122668633969609986'
+lifecycle_stage: deleted
+run_id: c92703fbbfd2470aa4c4941fdabdcba1
+run_name: Random Forest Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750856960421
+status: 3
+tags: []
+user_id: ABCD

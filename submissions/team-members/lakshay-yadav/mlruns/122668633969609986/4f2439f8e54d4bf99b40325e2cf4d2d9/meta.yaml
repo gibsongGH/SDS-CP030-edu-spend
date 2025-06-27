@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/4f2439f8e54d4bf99b40325e2cf4d2d9/artifacts
+end_time: 1751022401540
+entry_point_name: ''
+experiment_id: '122668633969609986'
+lifecycle_stage: active
+run_id: 4f2439f8e54d4bf99b40325e2cf4d2d9
+run_name: Gradient Boosting Classifier Tuned
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751022364879
+status: 3
+tags: []
+user_id: ABCD

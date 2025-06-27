@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/56a22d85af894520b1f5a73bb051b208/artifacts
+deleted_time: 1751021950801
+end_time: 1751017931647
+entry_point_name: ''
+experiment_id: '122668633969609986'
+lifecycle_stage: deleted
+run_id: 56a22d85af894520b1f5a73bb051b208
+run_name: Random Forest Classifier Tuned
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751017909104
+status: 3
+tags: []
+user_id: ABCD

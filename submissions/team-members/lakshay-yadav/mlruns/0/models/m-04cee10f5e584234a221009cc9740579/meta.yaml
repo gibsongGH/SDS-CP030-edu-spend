@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/0/models/m-04cee10f5e584234a221009cc9740579/artifacts
+creation_timestamp: 1750851864670
+experiment_id: '0'
+last_updated_timestamp: 1750851872688
+model_id: m-04cee10f5e584234a221009cc9740579
+model_type: null
+name: classification_model
+source_run_id: 1d2304226dda484c9c63bbea450079a3
+status: 2
+status_message: null

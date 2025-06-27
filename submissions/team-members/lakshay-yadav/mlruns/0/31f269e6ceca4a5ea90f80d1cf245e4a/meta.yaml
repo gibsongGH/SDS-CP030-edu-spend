@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/0/31f269e6ceca4a5ea90f80d1cf245e4a/artifacts
+end_time: 1750851863905
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 31f269e6ceca4a5ea90f80d1cf245e4a
+run_name: Gradient Boosting Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750851855397
+status: 3
+tags: []
+user_id: ABCD

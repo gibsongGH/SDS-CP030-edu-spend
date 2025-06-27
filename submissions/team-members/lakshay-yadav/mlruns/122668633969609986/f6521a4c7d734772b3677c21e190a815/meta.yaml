@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/f6521a4c7d734772b3677c21e190a815/artifacts
+deleted_time: 1751021950957
+end_time: 1750948133987
+entry_point_name: ''
+experiment_id: '122668633969609986'
+lifecycle_stage: deleted
+run_id: f6521a4c7d734772b3677c21e190a815
+run_name: XGBoost Regressor (Tuned)
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750948126240
+status: 3
+tags: []
+user_id: ABCD

@@ -1,0 +1,37 @@
+artifact_path: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/0/models/m-c2ed00a60d974269bbbfbbf1991b3131/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.10.18
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.0
+is_signature_from_type_hint: false
+mlflow_version: 3.1.0
+model_id: m-c2ed00a60d974269bbbfbbf1991b3131
+model_size_bytes: 140092
+model_uuid: m-c2ed00a60d974269bbbfbbf1991b3131
+prompts: null
+run_id: dba5621d37d14857ba40faa206763fa4
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "string", "name": "Country", "required": true}, {"type": "string",
+    "name": "City", "required": true}, {"type": "string", "name": "Level", "required":
+    true}, {"type": "long", "name": "Tuition_USD", "required": true}, {"type": "long",
+    "name": "Rent_USD", "required": true}, {"type": "long", "name": "Insurance_USD",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-25 11:05:49.257425'

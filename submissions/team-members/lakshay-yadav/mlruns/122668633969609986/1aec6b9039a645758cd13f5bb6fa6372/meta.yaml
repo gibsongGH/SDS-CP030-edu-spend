@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/1aec6b9039a645758cd13f5bb6fa6372/artifacts
+end_time: 1751022029922
+entry_point_name: ''
+experiment_id: '122668633969609986'
+lifecycle_stage: active
+run_id: 1aec6b9039a645758cd13f5bb6fa6372
+run_name: XGBoost Classifier
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751022017346
+status: 3
+tags: []
+user_id: ABCD
