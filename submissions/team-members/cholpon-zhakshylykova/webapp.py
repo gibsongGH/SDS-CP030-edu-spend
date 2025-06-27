@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 # --- Page Config ---
 st.set_page_config(page_title='International Education Budget Planner', layout='wide')
-st.title("🎓 International Education Budget Planner")
+st.title("International Education Budget Planner")
 
 # --- Load Data ---
 @st.cache_data
@@ -41,21 +41,17 @@ most_common_university = filtered["University"].mode()[0] if not filtered.empty 
 most_common_program = data["Program"].mode()[0] if not data.empty else "Unknown"
 
 # --- User Numeric Inputs ---
-tuition = st.sidebar.number_input("Tuition per Year (USD)", min_value=0, value=10000)
-living_index = st.sidebar.number_input("Living Cost Index", min_value=0.0, value=65.0)
+#tuition = st.sidebar.number_input("Tuition per Year (USD)", min_value=0, value=10000)
+#living_index = st.sidebar.number_input("Living Cost Index", min_value=0.0, value=65.0)
 rent = st.sidebar.number_input("Monthly Rent (USD)", min_value=0, value=500)
 visa_fee = st.sidebar.number_input("Visa Fee (USD)", min_value=0, value=200)
 insurance = st.sidebar.number_input("Insurance per Year (USD)", min_value=0, value=600)
 
 # --- Construct Input Frame ---
 user_input = pd.DataFrame({
-    "Country": [target_country],
-    "City": [most_common_city],
     "University": [most_common_university],
     "Program": [most_common_program],
     "Level": [level],
-    "Tuition_USD": [tuition],
-    "Living_Cost_Index": [living_index],
     "Rent_USD": [rent * 12],  # annual
     "Visa_Fee_USD": [visa_fee],
     "Insurance_USD": [insurance],

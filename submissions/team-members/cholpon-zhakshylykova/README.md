@@ -1,50 +1,123 @@
-# Cost of International Education Analysis
+# 📘 International Education Budget Planner
 
-This project analyzes the cost of international education across various countries, cities, universities, and programs. The dataset includes tuition fees, living costs, rent, visa fees, and insurance costs, among other attributes.
+This project provides a predictive pipeline to estimate the **Total Cost of Attendance (TCA)** for international students based on reduced but essential factors such as program, university, and living costs. It includes exploratory data analysis (EDA), a streamlined machine learning pipeline, feature importance analysis, and an interactive Streamlit web application.
 
-## Key Features of the Analysis
+---
 
-1. **Exploratory Data Analysis (EDA):**
-    - Profiled cost distributions by country, city, level, and program.
-    - Visualized correlations among tuition fees, living cost index, rent, and other variables.
-    - Computed baseline total cost of attendance (tuition + rent × months + visa + insurance × years).
-    - Detected outliers and assessed currency-conversion stability.
+## 🔍 Objective
+Build a lightweight and interpretable machine learning model to estimate the financial burden of studying abroad using reduced real-world cost indicators.
 
-2. **Derived Features:**
-    - One-hot encoding for categorical variables.
-    - Scaled and transformed numeric cost-related features.
-    - Generated affordability-tier labels (Low/Medium/High) using quantile-based segmentation.
+---
 
-3. **Predictive Modeling:**
-    - Regression model to estimate total cost of study based on program specifications and location attributes.
-    - Classification model to categorize records into affordability tiers.
+## 🧪 Exploratory Data Analysis (EDA)
+- Checked for missing values and data quality issues
+- Explored distributions of tuition, rent, and other numeric costs
+- Analyzed category balance in `University`, `Program`, and `Level`
+- Used boxplots and histograms to visualize cost variations
+- Investigated cost clustering using domain-specific heuristics
 
-4. **Clustering:**
-    - Applied K-Means and HDBSCAN clustering to group universities or destinations into cost archetypes.
+EDA insights guided feature reduction and selection.
 
-5. **Evaluation & Tuning:**
-    - Regression: Evaluated using MAE, RMSE, and R².
-    - Classification: Evaluated using accuracy, macro F1, and ROC-AUC.
-    - Clustering: Evaluated using silhouette score and qualitative review.
-    - Hyperparameter tuning for tree-based and gradient-boosted models.
+### 📊 Example Visuals:
+- ![Boxplot](images/boxplot_example.png)
+- ![Tuition Distribution](images/histogram_tuition.png)
 
-## Key Insights
+---
 
-- **Top Countries with Highest Costs:** USA, Hong Kong, Singapore, Australia, and Canada lead in total costs.
-- **Strong Correlations:** Living cost index and rent are highly correlated. Tuition fees moderately correlate with rent and insurance costs.
-- **Affordability Tiers:** Quantile-based segmentation provides insights into low, medium, and high-cost tiers.
+## 🧠 Machine Learning Pipeline
+- Models: `RandomForestRegressor`, `GradientBoostingRegressor`, `XGBoost`
+- Data preprocessing with `OneHotEncoder` and `StandardScaler`
+- Pipeline and model tracking using `MLflow`
+- Feature importance visualization
 
-## Tools and Libraries
+**Target variable:** `Total_cost`
 
-- Python: pandas, numpy, seaborn, matplotlib, scikit-learn, hdbscan.
-- Data Source: Kaggle dataset on international education costs.
+### Feature Engineering
+- **Categorical**: University, Program, Level
+- **Numerical**: Living Index, Rent, Insurance, Visa Fees, Duration
 
-## Future Work
+---
 
-- Incorporate additional features like scholarships and financial aid.
-- Explore advanced clustering techniques for better grouping.
-- Develop a web-based dashboard for interactive exploration of the dataset.
+## 📦 Feature Selection Philosophy
 
-## Conclusion
+This version retains **a minimal subset of features** based on data-driven reduction while preserving domain-critical fields.
 
-This analysis provides a comprehensive overview of the costs associated with international education, highlighting key trends and insights that can help prospective students make informed decisions about their study abroad plans.
+### Why?
+- Reduces noise and complexity
+- Improves generalizability
+- Still captures the core cost drivers based on EDA and prior importance plots
+
+### 📈 Grouped Importance Visual
+- ![Grouped Feature Importance](grouped_feature_importance.png)
+
+**Conclusion:** Simpler feature sets were tested to achieve better bias-variance trade-off without losing critical context.
+
+---
+
+## 📈 Outputs
+- Model evaluation metrics: MAE, RMSE, R²
+- Grouped feature importance graph
+- Prediction vs Actual plot
+- Classification report of affordability tiers (Low, Medium, High)
+- MLflow run logs and model artifacts
+
+### Example Evaluation Visuals
+- ![Predicted vs Actual](best_model_plot_GradientBoosting.png)
+- ![R2 vs TopN Features](r2_vs_topn_plot.png)
+
+---
+
+## 💻 Streamlit Web App
+### Key Features:
+- Predicts TCA based on user inputs
+- Interactive affordability world map
+- Cluster segment explorer by cost tiers
+
+Launches with:
+```bash
+streamlit run webapp.py
+```
+
+---
+
+## 🧪 How to Run the Model Pipeline
+```bash
+python mlflow_run.py
+```
+This trains models, logs results to MLflow, and exports:
+- `model_pipeline.pkl` — best model pipeline
+- `grouped_feature_importance.png` — feature analysis
+- `model_predictions.csv` — final evaluation predictions
+
+---
+
+## 📁 Files
+| File | Description |
+|------|-------------|
+| `mlflow_run.py` | Training pipeline script with MLflow integration |
+| `webapp.py` | Streamlit dashboard for prediction and visualization |
+| `data_tca_clusters_raw.csv` | Raw input dataset |
+| `model_pipeline.pkl` | Serialized model pipeline (auto-generated) |
+| `grouped_feature_importance.png` | Feature importance plot (auto-generated) |
+| `best_model_plot_*.png` | Model performance plots |
+| `r2_vs_topn_plot.png` | Feature reduction vs R² performance |
+
+---
+
+## ✅ Requirements
+- `scikit-learn`
+- `xgboost`
+- `mlflow`
+- `pandas`, `numpy`, `matplotlib`
+- `streamlit`, `plotly`
+
+Install with:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🙋‍♀️ Author
+- Cholpon Zhakshylykova  
+*Student project — Software Development School SDS CP030*
