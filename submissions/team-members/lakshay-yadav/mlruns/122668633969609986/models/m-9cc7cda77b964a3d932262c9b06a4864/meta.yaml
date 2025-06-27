@@ -1,0 +1,10 @@
+artifact_location: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/models/m-9cc7cda77b964a3d932262c9b06a4864/artifacts
+creation_timestamp: 1751017436458
+experiment_id: '122668633969609986'
+last_updated_timestamp: 1751017451374
+model_id: m-9cc7cda77b964a3d932262c9b06a4864
+model_type: null
+name: regression_model
+source_run_id: 6e93481cb0b7427fba5025f54bcbb8e3
+status: 2
+status_message: null
