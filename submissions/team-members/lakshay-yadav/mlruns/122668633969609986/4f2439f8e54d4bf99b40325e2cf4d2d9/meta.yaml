@@ -1,8 +1,9 @@
 artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/4f2439f8e54d4bf99b40325e2cf4d2d9/artifacts
+deleted_time: 1751030636789
 end_time: 1751022401540
 entry_point_name: ''
 experiment_id: '122668633969609986'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 4f2439f8e54d4bf99b40325e2cf4d2d9
 run_name: Gradient Boosting Classifier Tuned
 source_name: ''

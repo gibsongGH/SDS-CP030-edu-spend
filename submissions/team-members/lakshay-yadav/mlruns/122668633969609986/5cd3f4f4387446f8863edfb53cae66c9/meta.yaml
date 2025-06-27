@@ -1,8 +1,9 @@
 artifact_uri: file:///c:/Users/ABCD/OneDrive/Documents/_CP30-EduSpend/SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav/mlruns/122668633969609986/5cd3f4f4387446f8863edfb53cae66c9/artifacts
+deleted_time: 1751030636878
 end_time: 1751022017316
 entry_point_name: ''
 experiment_id: '122668633969609986'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 5cd3f4f4387446f8863edfb53cae66c9
 run_name: Random Forest Classifier
 source_name: ''
