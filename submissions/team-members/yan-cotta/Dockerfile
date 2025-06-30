@@ -18,8 +18,10 @@ COPY app.py .
 COPY tca_predictor.joblib .
 COPY tca_predictor_metadata.json .
 COPY feature_columns.pkl .
-COPY data/final_labeled_data.csv ./data/
-COPY data/International_Education_Costs.csv ./data/
+
+# Create data directory and copy data files
+RUN mkdir -p ./data
+COPY data/ ./data/
 
 # Create a non-root user for security
 RUN useradd --create-home --shell /bin/bash app && \
