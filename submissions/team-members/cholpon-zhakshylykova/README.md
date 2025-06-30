@@ -120,4 +120,4 @@ pip install -r requirements.txt
 
 ## 🙋‍♀️ Author
 - Cholpon Zhakshylykova  
-*Student project — Software Development School SDS CP030*
+*collaborative project SDS CP030*
