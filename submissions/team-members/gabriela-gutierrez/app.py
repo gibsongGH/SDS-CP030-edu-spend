@@ -93,26 +93,21 @@ if uploaded_file is not None:
     st.download_button("📥 Download Predictions", data=csv, file_name="predictions.csv", mime="text/csv")
 
 # SHAP Explanation
-# SHAP Explanation
 st.markdown("---")
 st.subheader("🧠 Model Explainability (SHAP)")
 explainer = shap.Explainer(model)
 shap_values = explainer(scaled_input)
 
+# Safely display SHAP explanation for a single instance
+shap_value = shap_values[0]
+
 st.write("**Feature Impact for Your Input:**")
 fig, ax = plt.subplots()
-shap.plots.waterfall(shap_values[0], max_display=7, show=False)
+shap.plots.waterfall(shap_value, max_display=7, show=False)
 plt.tight_layout()
 st.pyplot(fig)
 
-# SHAP Summary Plot
-st.markdown("**SHAP Summary Plot for Dataset:**")
-fig, ax = plt.subplots()
-shap.plots.bar(shap_values, max_display=10, show=False)
-plt.tight_layout()
-st.pyplot(fig)
-
-# Export SHAP as image
+# Export SHAP plot
 buf = io.BytesIO()
 fig.savefig(buf, format="png")
 st.download_button(
@@ -130,6 +125,7 @@ if "Cost_Archetype" in df.columns:
         "Tuition_USD", "Living_Cost_Index", "Rent_USD",
         "Visa_Fee_USD", "Insurance_USD", "Duration_Years", "Total_Cost_USD"
     ]]
+    pca = PCA(n_components=2)
     X_pca = pca.fit_transform(scaler.transform(X_cluster))
 
     fig, ax = plt.subplots()
@@ -143,6 +139,8 @@ if "Cost_Archetype" in df.columns:
 
 st.markdown("---")
 st.caption("Made with 💖 using Streamlit, SHAP & XGBoost")
+
+
 
 
 
