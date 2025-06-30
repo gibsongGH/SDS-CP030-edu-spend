@@ -1,8 +1,8 @@
 Model,Scaling,MAE,MSE,RMSE,R2,Best_Params
-RandomForest,scaled,4862.258859658056,71745796.6925493,8470.28905602101,0.9488455767585415,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
-RandomForest,unscaled,4945.482654339531,71447500.60331134,8452.662338181464,0.9490582604989639,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
-GradientBoosting,scaled,5232.738787364171,70472734.716196,8394.804030839314,0.9497532640956835,"{'regressor__learning_rate': 0.1, 'regressor__n_estimators': 100}"
-GradientBoosting,unscaled,5230.174212311225,70415110.03581113,8391.371165418148,0.9497943502279094,"{'regressor__learning_rate': 0.1, 'regressor__n_estimators': 100}"
+RandomForest,scaled,4814.502398040901,67910846.38081852,8240.803746044345,0.9515798787023461,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
+RandomForest,unscaled,4904.873620239488,71097150.37152773,8431.912616454687,0.9493080586037393,"{'regressor__max_depth': 10, 'regressor__n_estimators': 100}"
+GradientBoosting,scaled,5231.903650391536,70435981.38546404,8392.614693018144,0.949779469051548,"{'regressor__learning_rate': 0.1, 'regressor__n_estimators': 100}"
+GradientBoosting,unscaled,5250.239465834984,70634986.6030944,8404.462303032502,0.9496375792461627,"{'regressor__learning_rate': 0.1, 'regressor__n_estimators': 100}"
 XGBoost,scaled,4188.932037688874,49560890.82798847,7039.949632489459,0.9646633126606298,"{'regressor__max_depth': 5, 'regressor__n_estimators': 100}"
 XGBoost,unscaled,4188.932037688874,49560890.82798847,7039.949632489459,0.9646633126606298,"{'regressor__max_depth': 5, 'regressor__n_estimators': 100}"
 LinearRegression,scaled,10825.456298189421,194593915.19202474,13949.692297395837,0.8612554329753641,{}

@@ -25,6 +25,16 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from xgboost import XGBRegressor
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
 
+print("=" * 50)
+print("PACKAGE VERSIONS")
+print("=" * 50)
+print(f"XGBoost version: {xgboost.__version__}")
+print(f"Scikit-learn version: {sklearn.__version__}")
+print(f"Pandas version: {pd.__version__}")
+print(f"NumPy version: {np.__version__}")
+print("=" * 50)
+
+
 # --- Clean old plots ---
 for f in glob.glob("*.png"):
     os.remove(f)
