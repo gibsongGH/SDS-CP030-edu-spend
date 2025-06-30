@@ -13,7 +13,19 @@ st.title("International Education Budget Planner")
 # --- Load Data ---
 @st.cache_data
 def load_data():
-    return pd.read_csv("data_tca_clusters_raw.csv")
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(script_dir, "data_tca_clusters_raw.csv")
+    
+    # Debug info (you can remove this later)
+    if not os.path.exists(csv_path):
+        st.error(f"CSV file not found at: {csv_path}")
+        st.info(f"Current working directory: {os.getcwd()}")
+        st.info(f"Script directory: {script_dir}")
+        st.info(f"Files in script directory: {os.listdir(script_dir)}")
+        st.stop()
+    
+    return pd.read_csv(csv_path)
 
 data = load_data()
 
