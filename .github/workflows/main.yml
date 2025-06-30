@@ -26,7 +26,7 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Build and Push the Docker image
@@ -38,8 +38,8 @@ jobs:
           file: ./submissions/team-members/yan-cotta/Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/sds-cp030-edu-spend:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/sds-cp030-edu-spend:${{ github.sha }}
+            ${{ secrets.DOCKER_USERNAME }}/sds-cp030-edu-spend:latest
+            ${{ secrets.DOCKER_USERNAME }}/sds-cp030-edu-spend:${{ github.sha }}
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
