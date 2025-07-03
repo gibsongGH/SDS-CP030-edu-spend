@@ -43,8 +43,8 @@ for f in glob.glob("*.png"):
 data = pd.read_csv("data_tca_clusters_raw.csv")
 
 # --- Feature config ---
-categorical_features = ["University", "Program", "Level"]
-numeric_features = ["Rent_USD", "Visa_Fee_USD", "Insurance_USD", "Duration_Years"]
+categorical_features = ["Country", "City", "University", "Program", "Level"]
+numeric_features = ["Tuition_USD", "Living_Cost_Index", "Rent_USD", "Visa_Fee_USD", "Insurance_USD", "Duration_Years"]
 
 target_column = "Total_cost"
 X = data[categorical_features + numeric_features]
@@ -153,6 +153,7 @@ for name, regressor in regressors.items():
                 plt.xlabel("Actual Total Cost")
                 plt.ylabel("Predicted Total Cost")
                 plt.title(f"Best Model: {run_name} - Predicted vs Actual")
+                plt.tight_layout()
                 z = np.polyfit(y_test_reg, preds, 1)
                 p = np.poly1d(z)
                 plt.plot(y_test_reg, p(y_test_reg), color="red", linewidth=2, label="Best fit line")
