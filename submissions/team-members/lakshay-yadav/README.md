@@ -116,16 +116,13 @@ streamlit run app.py
 
 ---
 
-## 📦 REQUIREMENTS (Core)
+---
 
-```txt
-streamlit>=1.30.0
-pandas==2.2.2
-numpy==1.24.4
-scikit-learn==1.3.2
-xgboost==2.0.3
-joblib>=1.2.0,<1.4.0
-```
+## 🌐 Deployment Link
+
+You can try the live EduSpend app here:  
+🔗 [https://cp30-deployment-aua6c32vdcaoenfdbqmkty.streamlit.app/](https://cp30-deployment-aua6c32vdcaoenfdbqmkty.streamlit.app/)
+
 
 ---
 
