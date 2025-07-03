@@ -6,8 +6,14 @@ import joblib
 regressor = joblib.load("deployment_models/best_regressor.pkl")
 classifier = joblib.load("deployment_models/best_classifier.pkl")
 
-# Load dataset used for dropdowns
-df = pd.read_csv("data/International_Education_Costs.csv")  # ✅ Use forward slashes or raw string
+# Load dataset used for dropdowns and saving in streamlit cache
+@st.cache_data
+def load_data():
+    url = "https://raw.githubusercontent.com/yadavLakshay/CP30_data/main/International_Education_Costs.csv"
+    return pd.read_csv(url)
+
+df = load_data()
+
 
 st.set_page_config(page_title="EduSpend Budget Planner", layout="centered")
 st.title("🎓 EduSpend — Budget Planner")
