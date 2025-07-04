@@ -1,0 +1,74 @@
+# Version control
+.git
+.gitignore
+
+# Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter notebooks (not needed in production)
+*.ipynb
+.ipynb_checkpoints
+
+# Development and local files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+logs/
+
+# Documentation files (not needed in container)
+README.md
+MODEL_USAGE.md
+CONTRIBUTING.md
+
+# Scripts and setup files (development only)
+setup_env.sh
+activate_env.sh
+deployment.sh
+
+# Test files
+test_*.py
+*_test.py
+tests/
+
+# Development models and experimental files
+models/
+plots/
+
+# MLflow artifacts (if any)
+mlruns/
+.mlflow/
+
+# Backup files
+*.bak
+*.backup
+
+# Development dependencies
+requirements-dev.txt
+
+# Local data files that are not essential
+*.csv.backup
+data_backup/
