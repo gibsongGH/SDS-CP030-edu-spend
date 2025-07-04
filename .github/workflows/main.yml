@@ -1,0 +1,49 @@
+name: CI/CD Pipeline for EduSpend Application
+
+# Trigger on push events to the main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job name: Build and Push to Docker Hub
+  build-and-push:
+    name: Build and Push to Docker Hub
+    runs-on: ubuntu-latest
+
+    steps:
+      # First step: Check out the repository's code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Docker Buildx to enable more advanced build features
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Docker Hub Login using repository secrets
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # Build and Push the Docker image
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./submissions/team-members/yan-cotta
+          file: ./submissions/team-members/yan-cotta/Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/sds-cp030-edu-spend:latest
+            ${{ secrets.DOCKER_USERNAME }}/sds-cp030-edu-spend:${{ github.sha }}
+          platforms: linux/amd64,linux/arm64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Optional: Add a step to verify the image was pushed successfully
+      - name: Image digest
+        run: echo "Image pushed successfully with digest ${{ steps.build-and-push.outputs.digest }}"
