@@ -1,7 +1,0 @@
-Model,Feature_Type,MAE,MSE,RMSE,R2,Best_Params
-RandomForest,categorical_only,7518.713919413921,107644094.39765003,10375.167198539502,0.9254582035689819,"{'regressor__max_depth': None, 'regressor__min_samples_split': 2, 'regressor__n_estimators': 200}"
-GradientBoosting,categorical_only,6053.044924862578,70739266.87864077,8410.663878591318,0.9510142004458888,"{'regressor__learning_rate': 0.2, 'regressor__max_depth': 5, 'regressor__n_estimators': 200}"
-XGBoost,categorical_only,6693.565912603022,87713269.59769028,9365.536268558799,0.9392599777699204,"{'regressor__learning_rate': 0.2, 'regressor__max_depth': 5, 'regressor__n_estimators': 200}"
-LinearRegression,categorical_only,11641.266106501784,208330886.94614327,14433.671984153696,0.855734226276589,{}
-Ridge,categorical_only,8232.897501113359,119993096.45975134,10954.136043511206,0.9169067191332554,{'regressor__alpha': 1.0}
-Lasso,categorical_only,8121.499603421297,122935163.55652958,11087.613068489069,0.9148693851964367,{'regressor__alpha': 10.0}
