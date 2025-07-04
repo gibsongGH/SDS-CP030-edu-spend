@@ -89,14 +89,18 @@ EduSpend/
 ## 💻 HOW TO RUN LOCALLY
 
 ```bash
-# Step 1: Clone the repository
-git clone https://github.com/your-username/eduspend-app.git
-cd eduspend-app
+# Step 1: Clone the main SDS challenge repository
+git clone https://github.com/SuperDataScience-Community-Projects/SDS-CP030-edu-spend.git
+cd SDS-CP030-edu-spend/submissions/team-members/lakshay-yadav
 
-# Step 2: Install dependencies
+# Step 2: (Optional) Create a virtual environment
+python -m venv venv
+source venv/bin/activate    # On Windows: venv\Scripts\activate
+
+# Step 3: Install dependencies
 pip install -r requirements.txt
 
-# Step 3: Run the Streamlit app
+# Step 4: Run the Streamlit app
 streamlit run app.py
 ```
 
