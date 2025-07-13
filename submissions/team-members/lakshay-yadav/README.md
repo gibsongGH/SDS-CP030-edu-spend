@@ -115,7 +115,7 @@ streamlit run app.py
 
 ## 📷 UI PREVIEW
 
-![App Screenshot](assets/UI.png)
+![App Screenshot](assets/UI1.jpg)
 
 
 ---
