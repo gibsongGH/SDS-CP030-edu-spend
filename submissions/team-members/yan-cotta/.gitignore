@@ -1,6 +1,18 @@
-# Data files - prevent datasets from being committed
-data/
+# Data files - prevent large/sensitive datasets from being committed, but allow essential production files
+data/raw/
+data/processed/
+data/external/
+data/temp/
+# Allow essential production data files
+!data/final_labeled_data.csv
+!data/International_Education_Costs.csv
+
+# Large CSV files (but allow essential ones)
 *.csv
+!final_labeled_data.csv
+!International_Education_Costs.csv
+
+# Excel files
 *.xlsx
 *.xls
 
@@ -37,10 +49,13 @@ Thumbs.db
 *.swp
 *.swo
 
-# Model artifacts and outputs
+# Model artifacts and outputs (but allow essential production models)
 models/
 outputs/
 artifacts/
 plots/
 *.pkl
-*.joblib
+# Allow essential production model files
+!tca_predictor.joblib
+!feature_columns.pkl
+!tca_predictor_metadata.json
